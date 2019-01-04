@@ -4,4 +4,7 @@ else
 	echo "tmux not installed. Run ./deploy to configure dependencies"
 fi
 
-echo "waffles"
+echo "Checking for updates"
+
+(cd ~/dotfiles && git pull && git submodule update --init --recursive)
+source ~/dotfiles/zsh/zshrc.sh
