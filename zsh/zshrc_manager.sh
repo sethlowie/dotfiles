@@ -13,3 +13,9 @@ echo "Checking for updates"
 (cd ~/dotfiles && git pull && git submodule update --init --recursive)
 source ~/dotfiles/zsh/zshrc.sh
 source ~/dotfiles/zsh/keybindings.sh
+
+alacrittyUpdate() {
+	cp ~/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml;
+	exit;
+}
+
