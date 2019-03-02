@@ -49,3 +49,6 @@ let g:deoplete#enable_at_startup = 1
 
 " RUST SETTINGS
 :let g:rustfmt_autosave = 1
+
+" GO SETTINGS
+let g:go_fmt_command = "goimports"
