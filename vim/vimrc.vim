@@ -24,6 +24,9 @@ endif
 :set background=dark
 colorscheme material
 
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+
 set number
 let g:go_disable_autoinstall = 0
 
