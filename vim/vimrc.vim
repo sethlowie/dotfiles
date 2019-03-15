@@ -13,6 +13,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'kaicataldo/material.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-commentary'
+Plug 'elixir-editors/vim-elixir'
 
 call plug#end()
 
@@ -23,6 +24,9 @@ endif
 :set syntax=on
 :set background=dark
 colorscheme material
+
+:set path+=**
+:set wildmenu
 
 let g:netrw_banner=0
 let g:netrw_liststyle=3
