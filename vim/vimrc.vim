@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'mattn/emmet-vim'
 Plug 'elmcast/elm-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'wakatime/vim-wakatime'
 Plug 'jiangmiao/auto-pairs'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'Shougo/deoplete.nvim'
