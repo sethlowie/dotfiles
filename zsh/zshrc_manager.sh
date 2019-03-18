@@ -2,6 +2,7 @@ TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
 }
 
+source ~/dotfiles/zsh/zshrc.sh
 if command -v tmux>/dev/null; then
 	[ -z $TMUX ] && exec tmux
 else
@@ -11,11 +12,9 @@ fi
 echo "Checking for updates"
 
 (cd ~/dotfiles && git pull && git submodule update --init --recursive)
-source ~/dotfiles/zsh/zshrc.sh
 source ~/dotfiles/zsh/keybindings.sh
 
 alacrittyUpdate() {
 	cp ~/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml;
 	exit;
 }
-
