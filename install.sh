@@ -8,7 +8,7 @@ read email
 
 sudo apt-get update
 
-sudo apt-get install -y git
+sudo apt-get install -y git xclip
 
 git config --global user.name "$name"
 git config --global user.email "$email"
@@ -18,12 +18,10 @@ ssh-keygen -t rsa -b 4096 -C "$email" -P "" -f ~/.ssh/my_key
 ## EXTRAS
 # sh ./scripts/haskell.sh
 
-echo ""
+echo "Public key copied to clipboard"
 echo "## COPY THIS PUBLIC KEY TO GITHUB ##"
 echo ""
-echo ~/.ssh/my_rsa.pub
-echo ""
-echo ""
+cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
 
 read -p "Press Enter to Continue Installation"
 
