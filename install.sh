@@ -14,6 +14,8 @@ git config --global user.name "$name"
 git config --global user.email "$email"
 
 ssh-keygen -t rsa -b 4096 -C "$email" -P "" -f ~/.ssh/my_key
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/my_key
 
 ## EXTRAS
 # sh ./scripts/haskell.sh
