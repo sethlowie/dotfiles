@@ -29,12 +29,12 @@ read -p "Press Enter to Continue Installation"
 
 git clone git@github.com:logiXbomb/dotfiles.git ~/dotfiles
 
-sh ./scripts/vim.sh
-sh ./scripts/zsh.sh
-sh ./scripts/tmux.sh
-sh ./scripts/docker.sh
-sh ./scripts/docker-compose.sh
-sh ./scripts/gcloud.sh
-sh ./scripts/kubectl.sh
-sh ./scripts/go.sh
+sh ~/dotfiles/scripts/vim.sh
+sh ~/dotfiles/scripts/zsh.sh
+sh ~/dotfiles/scripts/tmux.sh
+sh ~/dotfiles/scripts/docker.sh
+sh ~/dotfiles/scripts/docker-compose.sh
+sh ~/dotfiles/scripts/gcloud.sh
+sh ~/dotfiles/scripts/kubectl.sh
+sh ~/dotfiles/scripts/go.sh
 
