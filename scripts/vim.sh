@@ -6,7 +6,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install pip3
-sudo apt-get install -y python3-pip
+sudo apt-get install -y vim-gtk3 python3-pip
 
 # Install neovim library for vim deoplete
 pip3 install neovim
