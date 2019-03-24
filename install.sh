@@ -68,3 +68,6 @@ sh ~/dotfiles/scripts/alacritty.sh
 
 waitFor "Install FuraCode Nerd Font Mono"
 sh ~/dotfiles/scripts/nerd-fonts.sh
+
+sudo shutdown -r now
+
