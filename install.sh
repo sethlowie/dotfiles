@@ -72,6 +72,9 @@ sh ~/dotfiles/scripts/nerd-fonts.sh
 waitFor "Install Slack"
 sh ~/dotfiles/scripts/slack.sh
 
+waitFor "Install Zoom"
+sh ~/dotfiles/scripts/zoom.sh
+
 waitFor "Install ZSH"
 sh ~/dotfiles/scripts/zsh.sh
 
