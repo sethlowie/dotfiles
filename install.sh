@@ -63,14 +63,17 @@ sh ~/dotfiles/scripts/go.sh
 waitFor "Install NodeJS"
 sh ~/dotfiles/scripts/nodejs.sh
 
-waitFor "Install ZSH"
-sh ~/dotfiles/scripts/zsh.sh
-
 waitFor "Install Alacritty"
 sh ~/dotfiles/scripts/alacritty.sh
 
 waitFor "Install FuraCode Nerd Font Mono"
 sh ~/dotfiles/scripts/nerd-fonts.sh
+
+waitFor "Install Slack"
+sh ~/dotfiles/scripts/slack.sh
+
+waitFor "Install ZSH"
+sh ~/dotfiles/scripts/zsh.sh
 
 sudo shutdown -r now
 
