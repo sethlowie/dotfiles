@@ -75,6 +75,9 @@ sh ~/dotfiles/scripts/slack.sh
 waitFor "Install Zoom"
 sh ~/dotfiles/scripts/zoom.sh
 
+waitFor "Install Facetime Camera Drivers"
+sh ~/dotfiles/scripts/facetime_cam.sh
+
 waitFor "Install ZSH"
 sh ~/dotfiles/scripts/zsh.sh
 
