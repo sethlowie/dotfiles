@@ -63,4 +63,5 @@ sh ~/dotfiles/scripts/go.sh
 waitFor "Install ZSH"
 sh ~/dotfiles/scripts/zsh.sh
 
-
+waitFor "Install Alacritty"
+sh ~/dotfiles/scripts/alacritty.sh
