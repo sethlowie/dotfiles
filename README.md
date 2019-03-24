@@ -5,6 +5,6 @@ sh -c "$(wget https://raw.githubusercontent.com/logiXbomb/dotfiles/master/instal
 ```
 
 ## TODO
-- [ ] Install Curl
+- [X] Install Curl
 - [ ] `'docker-ce' has no installation candidate` 
 - [ ] Docker `usermod` group does not exist
