@@ -4,7 +4,7 @@ rustup override set stable
 rustup update stable
 
 cd /tmp
-git clone https://github.com/jwilm/alacritty.git
+git clone git@github.com:logiXbomb/alacritty.git
 cd alacritty
 
 sudo apt-get install -y \
@@ -21,3 +21,4 @@ sudo desktop-file-install alacritty.desktop
 sudo update-desktop-database
 
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/alacritty 50
+

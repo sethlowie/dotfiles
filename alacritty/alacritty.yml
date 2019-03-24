@@ -87,21 +87,18 @@ tabspaces: 8
 font:
   # Normal (roman) font face
   normal:
-    family: Menlo
-    # The `style` can be specified to pick a specific face.
-    #style: Regular
+    family: "FuraCode Nerd Font Mono"
+    style: Regular
 
   # Bold font face
   bold:
-    family: Menlo
-    # The `style` can be specified to pick a specific face.
-    #style: Bold
+    family: "FuraCode Nerd Font Mono"
+    style: Bold
 
   # Italic font face
   italic:
-    family: Menlo
-    # The `style` can be specified to pick a specific face.
-    #style: Italic
+    family: "FuraCode Nerd Font Mono"
+    style: Italic
 
   # Point size
   size: 16.0

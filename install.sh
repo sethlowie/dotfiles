@@ -65,3 +65,6 @@ sh ~/dotfiles/scripts/zsh.sh
 
 waitFor "Install Alacritty"
 sh ~/dotfiles/scripts/alacritty.sh
+
+waitFor "Install FuraCode Nerd Font Mono"
+sh ~/dotfiles/scripts/nerd-fonts.sh
