@@ -1,5 +1,12 @@
 #! /bin/bash
 
+waitFor () {
+  echo $1
+  stty -echo
+  read x
+  stty echo
+}
+
 echo "Name:"
 read name
 
@@ -25,16 +32,31 @@ echo "## COPY THIS PUBLIC KEY TO GITHUB ##"
 echo ""
 cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
 
-read -p "Press Enter to Continue Installation"
+waitFor "Press Enter to Continue Installation"
 
 git clone git@github.com:logiXbomb/dotfiles.git ~/dotfiles
 
+waitFor "Install VIM"
 sh ~/dotfiles/scripts/vim.sh
+
+waitFor "Install ZSH"
 sh ~/dotfiles/scripts/zsh.sh
+
+waitFor "Install TMUX"
 sh ~/dotfiles/scripts/tmux.sh
+
+waitFor "Install Docker"
 sh ~/dotfiles/scripts/docker.sh
+
+waitFor "Install Docker Compose"
 sh ~/dotfiles/scripts/docker-compose.sh
+
+waitFor "Install GCloud"
 sh ~/dotfiles/scripts/gcloud.sh
+
+waitFor "Install KubeCTL"
 sh ~/dotfiles/scripts/kubectl.sh
+
+waitFor "Install Go"
 sh ~/dotfiles/scripts/go.sh
 
