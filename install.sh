@@ -39,9 +39,6 @@ git clone git@github.com:logiXbomb/dotfiles.git ~/dotfiles
 waitFor "Install VIM"
 sh ~/dotfiles/scripts/vim.sh
 
-waitFor "Install ZSH"
-sh ~/dotfiles/scripts/zsh.sh
-
 waitFor "Install TMUX"
 sh ~/dotfiles/scripts/tmux.sh
 
@@ -59,4 +56,8 @@ sh ~/dotfiles/scripts/kubectl.sh
 
 waitFor "Install Go"
 sh ~/dotfiles/scripts/go.sh
+
+waitFor "Install ZSH"
+sh ~/dotfiles/scripts/zsh.sh
+
 
