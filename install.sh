@@ -60,6 +60,9 @@ sh ~/dotfiles/scripts/kubectl.sh
 waitFor "Install Go"
 sh ~/dotfiles/scripts/go.sh
 
+waitFor "Install NodeJS"
+sh ~/dotfiles/scripts/nodejs.sh
+
 waitFor "Install ZSH"
 sh ~/dotfiles/scripts/zsh.sh
 
