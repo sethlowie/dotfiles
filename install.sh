@@ -15,7 +15,10 @@ read email
 
 sudo apt-get update
 
-sudo apt-get install -y git xclip
+sudo apt-get install -y \
+  git \
+  xclip \
+  curl
 
 git config --global user.name "$name"
 git config --global user.email "$email"
