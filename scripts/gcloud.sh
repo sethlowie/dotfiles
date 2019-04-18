@@ -1,5 +1,5 @@
 #! /bin/bash
-sudo snap install gcloud-cloud-sdk
+sudo snap install google-cloud-sdk --classic
 
 # SETUP
 gcloud init
