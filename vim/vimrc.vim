@@ -12,8 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'kaicataldo/material.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-commentary'
-Plug 'elixir-editors/vim-elixir'
-Plug 'neovimhaskell/haskell-vim'
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
