@@ -1,5 +1,13 @@
 #! /bin/bash
-sudo snap install google-cloud-sdk --classic
+cd /tmp
+
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-242.0.0-linux-x86_64.tar.gz
+
+tar zxvf google-cloud-sdk-242.0.0-linux-x86_64.tar.gz
+
+./google-cloud-sdk/install.sh
+
+source ~/.zshrc
 
 # SETUP
 gcloud init

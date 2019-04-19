@@ -1,3 +1,9 @@
+sudo apt-get install linux-headers-`uname -r` git kmod libssl-dev checkinstall curl cpio
+
+checkinstall curl xzcat cpio
+
+cd /tmp
+
 git clone https://github.com/patjak/bcwc_pcie.git
 cd bcwc_pcie/firmware
 make
