@@ -33,6 +33,8 @@ install() {
 			echo "\r\c"
 	done
 
+	echo "\r\c"
+
 	echo "$name installed"
 
 	tput cnorm -- normal
@@ -73,7 +75,7 @@ init() {
 
 	ssh-keygen -t rsa -b 4096 -C "$email" -P "" -f ~/.ssh/my_key
 	eval "$(ssh-agent -s)"
-	ssh-add ~/.ssh/my_key
+	ssh-add ~/.ssh/my_key > /dev/null
 
 	## EXTRAS
 	# sh ./scripts/haskell.sh
@@ -88,7 +90,7 @@ install "Git" init
 
 waitFor "Press Enter to Continue Installation"
 
-git clone --quiet git@github.com:logiXbomb/dotfiles.git ~/dotfiles > /dev/null
+install Dotfiles git clone --quiet git@github.com:logiXbomb/dotfiles.git ~/dotfiles
 
 # install Vim sh ~/dotfiles/scripts/vim.sh
 
