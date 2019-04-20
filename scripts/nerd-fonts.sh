@@ -1,9 +1,6 @@
 #! /bin/bash
 
-cd /tmp
+wget -O /tmp/FiraMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/FiraMono.zip
 
-git clone --depth 1 git@github.com:ryanoasis/nerd-fonts.git
+unzip /tmp/FiraMono.zip -d ~/.local/share/fonts/NerdFonts/
 
-cd nerd-fonts
-
-./install.sh FiraCode
