@@ -88,7 +88,7 @@ install "Git" init
 
 waitFor "Press Enter to Continue Installation"
 
-(git clone --quiet git@github.com:logiXbomb/dotfiles.git ~/dotfiles) > /dev/null
+git clone --quiet git@github.com:logiXbomb/dotfiles.git ~/dotfiles > /dev/null
 
 # install Vim sh ~/dotfiles/scripts/vim.sh
 
