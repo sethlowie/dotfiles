@@ -33,7 +33,7 @@ install() {
 			echo "\r\c"
 	done
 
-	echo ""
+	echo "\r\c"
 
 	echo "\r$name installed\c"
 
