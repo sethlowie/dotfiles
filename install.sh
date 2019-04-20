@@ -16,16 +16,16 @@ install() {
 	do
 			c=`expr ${i} % 10`
 			case ${c} in
-				 0) echo "Installing $name \e[36m⠋\c" ;;
-				 1) echo "Installing $name \e[36m⠙\c" ;;
-				 2) echo "Installing $name \e[36m⠹\c" ;;
-				 3) echo "Installing $name \e[36m⠸\c" ;;
-				 4) echo "Installing $name \e[36m⠼\c" ;;
-				 5) echo "Installing $name \e[36m⠴\c" ;;
-				 6) echo "Installing $name \e[36m⠦\c" ;;
-				 7) echo "Installing $name \e[36m⠧\c" ;;
-				 8) echo "Installing $name \e[36m⠇\c" ;;
-				 9) echo "Installing $name \e[36m⠏\c" ;;
+				 0) echo "Installing $name \e[36m⠋\e[0m\c" ;;
+				 1) echo "Installing $name \e[36m⠙\e[0m\c" ;;
+				 2) echo "Installing $name \e[36m⠹\e[0m\c" ;;
+				 3) echo "Installing $name \e[36m⠸\e[0m\c" ;;
+				 4) echo "Installing $name \e[36m⠼\e[0m\c" ;;
+				 5) echo "Installing $name \e[36m⠴\e[0m\c" ;;
+				 6) echo "Installing $name \e[36m⠦\e[0m\c" ;;
+				 7) echo "Installing $name \e[36m⠧\e[0m\c" ;;
+				 8) echo "Installing $name \e[36m⠇\e[0m\c" ;;
+				 9) echo "Installing $name \e[36m⠏\e[0m\c" ;;
 			esac
 			i=`expr ${i} + 1`
 			# change the speed of the spinner by altering the 1 below
