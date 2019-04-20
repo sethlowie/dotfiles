@@ -8,4 +8,3 @@ tar xvzf binaries-for-linux.tar.gz
 
 sudo mv ./elm /usr/local/bin
 
-

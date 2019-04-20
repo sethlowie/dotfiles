@@ -50,41 +50,31 @@ git clone git@github.com:logiXbomb/dotfiles.git ~/dotfiles > /dev/null
 
 install Vim vim
 
-# waitFor "Install TMUX"
-# sh ~/dotfiles/scripts/tmux.sh
+install TMUX tmux
 
-# waitFor "Install Docker"
-# sh ~/dotfiles/scripts/docker.sh
+install Docker docker
 
-# waitFor "Install Docker Compose"
-# sh ~/dotfiles/scripts/docker-compose.sh
+install "Docker Compose" docker-compose
 
-# waitFor "Install GCloud"
-# sh ~/dotfiles/scripts/gcloud.sh
+install GCloud gcloud
 
-# waitFor "Install KubeCTL"
-# sh ~/dotfiles/scripts/kubectl.sh
+install KubeCTL kubectl
 
-# waitFor "Install Go"
-# sh ~/dotfiles/scripts/go.sh
+install Go go
 
-# waitFor "Install NodeJS"
-# sh ~/dotfiles/scripts/nodejs.sh
+# install NodeJS nodejs
 
 install Alacritty alacritty
 
 install "Nerd Fonts" nerd-fonts
 
-# waitFor "Install Slack"
-# sh ~/dotfiles/scripts/slack.sh
+# install Slack slack
 
-# waitFor "Install Zoom"
-# sh ~/dotfiles/scripts/zoom.sh
+install Zoom zoom
 
-# waitFor "Install Facetime Camera Drivers"
-# sh ~/dotfiles/scripts/facetime_cam.sh
+install "Facetime Camera" facetime_cam
 
 install ZSH zsh
 
-# sudo shutdown -r now
+sudo shutdown -r now
 

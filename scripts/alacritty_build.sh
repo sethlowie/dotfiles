@@ -1,10 +1,5 @@
 #! /bin/bash
 
-curl https://sh.rustup.rs -sSf | sh
-
-rustup override set stable
-rustup update stable
-
 cd /tmp
 git clone git@github.com:logiXbomb/alacritty.git
 cd alacritty

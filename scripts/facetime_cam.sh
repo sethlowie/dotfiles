@@ -1,4 +1,4 @@
-sudo apt-get install linux-headers-`uname -r` git kmod libssl-dev checkinstall curl cpio
+sudo apt-get install -y linux-headers-`uname -r` git kmod libssl-dev checkinstall curl cpio
 
 checkinstall curl xzcat cpio
 
