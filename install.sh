@@ -35,7 +35,7 @@ install() {
 
 	echo "\r\c"
 
-	echo "$name installed \033[1;32m✓\033[0m\c"
+	echo "$name installed ✓\c"
 
 	echo ""
 
