@@ -1,23 +1,9 @@
-curl https://sh.rustup.rs -sSf | sh
+sudo wget -O /usr/local/bin/alacritty https://sync-tool.sfo2.cdn.digitaloceanspaces.com/alacritty
 
-rustup override set stable
-rustup update stable
+sudo wget -O /tmp/alacritty.desktop https://sync-tool.sfo2.cdn.digitaloceanspaces.com/alacritty.desktop
 
-cd /tmp
-git clone git@github.com:logiXbomb/alacritty.git
-cd alacritty
+sudo desktop-file-install /tmp/alacritty.desktop
 
-sudo apt-get install -y \
-	cmake \
-	pkg-config \
-	libfreetype6-dev \
-	libfontconfig1-dev \
-	xclip
-
-/home/slowie/.cargo/bin/cargo build --release
-
-sudo cp target/release/alacritty /usr/local/bin # or anywhere else in $PATH
-sudo desktop-file-install alacritty.desktop
 sudo update-desktop-database
 
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/alacritty 50
