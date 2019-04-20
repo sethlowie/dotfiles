@@ -3,7 +3,7 @@
 install() {
   echo ""
   echo "#### Installing $1 ####"
-  sh ~/dotfiles/scripts/$2.sh
+  sh ~/dotfiles/scripts/$2.sh > /dev/null
   echo ""
   echo "~~~~ $1 installed! ~~~~"
   echo""

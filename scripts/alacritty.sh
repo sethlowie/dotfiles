@@ -1,5 +1,7 @@
 sudo wget -O /usr/local/bin/alacritty https://sync-tool.sfo2.cdn.digitaloceanspaces.com/alacritty
 
+sudo chmod +x /usr/local/bin/alacritty
+
 sudo wget -O /tmp/alacritty.desktop https://sync-tool.sfo2.cdn.digitaloceanspaces.com/alacritty.desktop
 
 sudo desktop-file-install /tmp/alacritty.desktop
