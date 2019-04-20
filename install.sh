@@ -35,7 +35,7 @@ install() {
 
 	echo "\r\c"
 
-	echo "$name installed"
+	echo "$name installed\c"
 
 	tput cnorm -- normal
 
