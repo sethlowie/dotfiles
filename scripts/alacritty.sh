@@ -1,3 +1,5 @@
+#! /bin/bash
+
 sudo wget -O /usr/local/bin/alacritty https://sync-tool.sfo2.cdn.digitaloceanspaces.com/alacritty
 
 sudo chmod +x /usr/local/bin/alacritty

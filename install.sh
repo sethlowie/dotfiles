@@ -73,11 +73,7 @@ install Vim vim
 
 install Alacritty alacritty
 
-# waitFor "Install Alacritty"
-# sh ~/dotfiles/scripts/alacritty.sh
-
-# waitFor "Install FuraCode Nerd Font Mono"
-# sh ~/dotfiles/scripts/nerd-fonts.sh
+install "Nerd Fonts" nerd-fonts
 
 # waitFor "Install Slack"
 # sh ~/dotfiles/scripts/slack.sh
@@ -88,8 +84,7 @@ install Alacritty alacritty
 # waitFor "Install Facetime Camera Drivers"
 # sh ~/dotfiles/scripts/facetime_cam.sh
 
-# waitFor "Install ZSH"
-# sh ~/dotfiles/scripts/zsh.sh
+install ZSH zsh
 
 # sudo shutdown -r now
 
