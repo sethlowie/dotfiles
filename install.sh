@@ -3,7 +3,7 @@
 sudo echo ""
 
 install() {
-	(sh ~/dotfiles/scripts/$2.sh ; /bin/false) &
+	(sh ~/dotfiles/scripts/$2.sh > /dev/null ; /bin/false) &
 
 	# ⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏
 
@@ -66,7 +66,7 @@ sudo apt-get install -y \
 git config --global user.name "$name"
 git config --global user.email "$email"
 
-ssh-keygen -t rsa -b 4096 -C "$email" -P "" -f ~/.ssh/my_key
+ssh-keygen -t rsa -b 4096 -C "$email" -P "" -f ~/.ssh/my_key > /dev/null
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/my_key
 
@@ -86,15 +86,15 @@ install Vim vim
 
 install TMUX tmux
 
-install Docker docker
+# install Docker docker
 
-install "Docker Compose" docker-compose
+# install "Docker Compose" docker-compose
 
-install GCloud gcloud
+# install GCloud gcloud
 
-install KubeCTL kubectl
+# install KubeCTL kubectl
 
-install Go go
+# install Go go
 
 # install NodeJS nodejs
 
@@ -108,14 +108,7 @@ install "Nerd Fonts" nerd-fonts
 
 # install "Facetime Camera" facetime_cam
 
-install ZSH zsh
+# install ZSH zsh
 
 # sudo shutdown -r now
-
-
-#!/bin/sh
-
-# The command you are waiting on goes between the ( ) here
-# The example below returns a non zero return code
-
 
