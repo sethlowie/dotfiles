@@ -16,16 +16,16 @@ install() {
 	do
 			c=`expr ${i} % 10`
 			case ${c} in
-				 0) echo "\e[0mInstalling $name \e[36m⠋\c" ;;
-				 1) echo "\e[0mInstalling $name \e[36m⠙\c" ;;
-				 2) echo "\e[0mInstalling $name \e[36m⠹\c" ;;
-				 3) echo "\e[0mInstalling $name \e[36m⠸\c" ;;
-				 4) echo "\e[0mInstalling $name \e[36m⠼\c" ;;
-				 5) echo "\e[0mInstalling $name \e[36m⠴\c" ;;
-				 6) echo "\e[0mInstalling $name \e[36m⠦\c" ;;
-				 7) echo "\e[0mInstalling $name \e[36m⠧\c" ;;
-				 8) echo "\e[0mInstalling $name \e[36m⠇\c" ;;
-				 9) echo "\e[0mInstalling $name \e[36m⠏\c" ;;
+				 0) echo "\e[0mInstalling $name \e[36m⠋\c\e[0m" ;;
+				 1) echo "\e[0mInstalling $name \e[36m⠙\c\e[0m" ;;
+				 2) echo "\e[0mInstalling $name \e[36m⠹\c\e[0m" ;;
+				 3) echo "\e[0mInstalling $name \e[36m⠸\c\e[0m" ;;
+				 4) echo "\e[0mInstalling $name \e[36m⠼\c\e[0m" ;;
+				 5) echo "\e[0mInstalling $name \e[36m⠴\c\e[0m" ;;
+				 6) echo "\e[0mInstalling $name \e[36m⠦\c\e[0m" ;;
+				 7) echo "\e[0mInstalling $name \e[36m⠧\c\e[0m" ;;
+				 8) echo "\e[0mInstalling $name \e[36m⠇\c\e[0m" ;;
+				 9) echo "\e[0mInstalling $name \e[36m⠏\c\e[0m" ;;
 			esac
 			i=`expr ${i} + 1`
 			# change the speed of the spinner by altering the 1 below
