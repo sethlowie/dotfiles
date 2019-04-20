@@ -1,5 +1,14 @@
 #! /bin/bash
 
+install() {
+  echo ""
+  echo "#### Installing $1 ####"
+  sh ~/dotfiles/scripts/$2.sh
+  echo ""
+  echo "~~~~ $1 installed! ~~~~"
+  echo""
+}
+
 waitFor () {
   echo $1
   stty -echo
@@ -13,12 +22,12 @@ read name
 echo "Email:"
 read email
 
-sudo apt-get update
+sudo apt-get update > /dev/null
 
 sudo apt-get install -y \
   git \
   xclip \
-  curl
+  curl > /dev/null
 
 git config --global user.name "$name"
 git config --global user.email "$email"
@@ -37,49 +46,50 @@ cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
 
 waitFor "Press Enter to Continue Installation"
 
-git clone git@github.com:logiXbomb/dotfiles.git ~/dotfiles
+git clone git@github.com:logiXbomb/dotfiles.git ~/dotfiles > /dev/null
 
-waitFor "Install VIM"
-sh ~/dotfiles/scripts/vim.sh
+install Vim vim
 
-waitFor "Install TMUX"
-sh ~/dotfiles/scripts/tmux.sh
+# waitFor "Install TMUX"
+# sh ~/dotfiles/scripts/tmux.sh
 
-waitFor "Install Docker"
-sh ~/dotfiles/scripts/docker.sh
+# waitFor "Install Docker"
+# sh ~/dotfiles/scripts/docker.sh
 
-waitFor "Install Docker Compose"
-sh ~/dotfiles/scripts/docker-compose.sh
+# waitFor "Install Docker Compose"
+# sh ~/dotfiles/scripts/docker-compose.sh
 
-waitFor "Install GCloud"
-sh ~/dotfiles/scripts/gcloud.sh
+# waitFor "Install GCloud"
+# sh ~/dotfiles/scripts/gcloud.sh
 
-waitFor "Install KubeCTL"
-sh ~/dotfiles/scripts/kubectl.sh
+# waitFor "Install KubeCTL"
+# sh ~/dotfiles/scripts/kubectl.sh
 
-waitFor "Install Go"
-sh ~/dotfiles/scripts/go.sh
+# waitFor "Install Go"
+# sh ~/dotfiles/scripts/go.sh
 
-waitFor "Install NodeJS"
-sh ~/dotfiles/scripts/nodejs.sh
+# waitFor "Install NodeJS"
+# sh ~/dotfiles/scripts/nodejs.sh
 
-waitFor "Install Alacritty"
-sh ~/dotfiles/scripts/alacritty.sh
+install Alacritty alacritty
 
-waitFor "Install FuraCode Nerd Font Mono"
-sh ~/dotfiles/scripts/nerd-fonts.sh
+# waitFor "Install Alacritty"
+# sh ~/dotfiles/scripts/alacritty.sh
 
-waitFor "Install Slack"
-sh ~/dotfiles/scripts/slack.sh
+# waitFor "Install FuraCode Nerd Font Mono"
+# sh ~/dotfiles/scripts/nerd-fonts.sh
 
-waitFor "Install Zoom"
-sh ~/dotfiles/scripts/zoom.sh
+# waitFor "Install Slack"
+# sh ~/dotfiles/scripts/slack.sh
 
-waitFor "Install Facetime Camera Drivers"
-sh ~/dotfiles/scripts/facetime_cam.sh
+# waitFor "Install Zoom"
+# sh ~/dotfiles/scripts/zoom.sh
 
-waitFor "Install ZSH"
-sh ~/dotfiles/scripts/zsh.sh
+# waitFor "Install Facetime Camera Drivers"
+# sh ~/dotfiles/scripts/facetime_cam.sh
 
-sudo shutdown -r now
+# waitFor "Install ZSH"
+# sh ~/dotfiles/scripts/zsh.sh
+
+# sudo shutdown -r now
 
