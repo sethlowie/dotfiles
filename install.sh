@@ -35,7 +35,7 @@ install() {
 
 	echo "\r\c"
 
-	echo "$name installed\c"
+	echo "\e[36m$name installed\c"
 
 	echo ""
 
