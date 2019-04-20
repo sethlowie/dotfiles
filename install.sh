@@ -3,33 +3,37 @@
 sudo echo ""
 
 install() {
-	(sh ~/dotfiles/scripts/$2.sh > /dev/null ; /bin/false) &
+	local name="$1"
+	shift 1
+	("$@" > /dev/null ; /bin/false) &
 
 	# ⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏
 
 	tput civis -- invisible
 
 	pid=$! ; i=0
-	while ps -a | awk '{print $1}' | grep -q "${pid}"
+	while ps -a | awk '{print $name}' | grep -q "${pid}"
 	do
 			c=`expr ${i} % 10`
 			case ${c} in
-				 0) echo "Installing $1 ⠋\c" ;;
-				 1) echo "Installing $1 ⠙\c" ;;
-				 2) echo "Installing $1 ⠹\c" ;;
-				 3) echo "Installing $1 ⠸\c" ;;
-				 4) echo "Installing $1 ⠼\c" ;;
-				 5) echo "Installing $1 ⠴\c" ;;
-				 6) echo "Installing $1 ⠦\c" ;;
-				 7) echo "Installing $1 ⠧\c" ;;
-				 8) echo "Installing $1 ⠇\c" ;;
-				 9) echo "Installing $1 ⠏\c" ;;
+				 0) echo "Installing $name ⠋\c" ;;
+				 1) echo "Installing $name ⠙\c" ;;
+				 2) echo "Installing $name ⠹\c" ;;
+				 3) echo "Installing $name ⠸\c" ;;
+				 4) echo "Installing $name ⠼\c" ;;
+				 5) echo "Installing $name ⠴\c" ;;
+				 6) echo "Installing $name ⠦\c" ;;
+				 7) echo "Installing $name ⠧\c" ;;
+				 8) echo "Installing $name ⠇\c" ;;
+				 9) echo "Installing $name ⠏\c" ;;
 			esac
 			i=`expr ${i} + 1`
 			# change the speed of the spinner by altering the 1 below
 			sleep 0.1
 			echo "\r\c"
 	done
+
+	echo "$name installed"
 
 	tput cnorm -- normal
 
@@ -56,59 +60,63 @@ read name
 echo "Email:"
 read email
 
-sudo apt-get update > /dev/null
+init() {
+	sudo apt-get update > /dev/null
 
-sudo apt-get install -y \
-  git \
-  xclip \
-  curl > /dev/null
+	sudo apt-get install -y \
+		git \
+		xclip \
+		curl > /dev/null
 
-git config --global user.name "$name"
-git config --global user.email "$email"
+	git config --global user.name "$name"
+	git config --global user.email "$email"
 
-ssh-keygen -t rsa -b 4096 -C "$email" -P "" -f ~/.ssh/my_key > /dev/null
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/my_key
+	ssh-keygen -t rsa -b 4096 -C "$email" -P "" -f ~/.ssh/my_key > /dev/null
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/my_key
 
-## EXTRAS
-# sh ./scripts/haskell.sh
+	## EXTRAS
+	# sh ./scripts/haskell.sh
 
-echo "Public key copied to clipboard"
-echo "## COPY THIS PUBLIC KEY TO GITHUB ##"
-echo ""
-cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
+	echo "Public key copied to clipboard"
+	echo "## COPY THIS PUBLIC KEY TO GITHUB ##"
+	echo ""
+	cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
+}
+
+install "Git" init
 
 waitFor "Press Enter to Continue Installation"
 
 git clone git@github.com:logiXbomb/dotfiles.git ~/dotfiles > /dev/null
 
-install Vim vim
+install Vim sh ~/dotfiles/scripts/vim.sh
 
-install TMUX tmux
+install TMUX sh ~/dotfiles/scripts/tmux.sh
 
-# install Docker docker
+# install Docker sh ~/dotfiles/scripts/docker.sh
 
-# install "Docker Compose" docker-compose
+# install "Docker Compose" sh ~/dotfiles/scripts/docker-compose.sh
 
-# install GCloud gcloud
+# install GCloud sh ~/dotfiles/scripts/gcloud.sh
 
-# install KubeCTL kubectl
+# install KubeCTL sh ~/dotfiles/scripts/kubectl.sh
 
-# install Go go
+# install Go sh ~/dotfiles/scripts/go.sh
 
-# install NodeJS nodejs
+# install NodeJS sh ~/dotfiles/scripts/nodejs.sh
 
-install Alacritty alacritty
+install Alacritty sh ~/dotfiles/scripts/alacritty.sh
 
-install "Nerd Fonts" nerd-fonts
+install "Nerd Fonts" sh ~/dotfiles/scripts/nerd-fonts.sh
 
-# install Slack slack
+# install Slack sh ~/dotfiles/scripts/slack.sh
 
-# install Zoom zoom
+# install Zoom sh ~/dotfiles/scripts/zoom.sh
 
-# install "Facetime Camera" facetime_cam
+# install "Facetime Camera" sh ~/dotfiles/scripts/facetime_cam.sh
 
-# install ZSH zsh
+install ZSH sh ~/dotfiles/scripts/zsh.sh
 
 # sudo shutdown -r now
 
