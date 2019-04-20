@@ -75,19 +75,15 @@ init() {
 
 	ssh-keygen -t rsa -b 4096 -C "$email" -P "" -f ~/.ssh/my_key
 	eval "$(ssh-agent -s)"
-	ssh-add ~/.ssh/my_key > /dev/null
-
-	## EXTRAS
-	# sh ./scripts/haskell.sh
-
-	echo "Public key copied to clipboard"
-	echo "## COPY THIS PUBLIC KEY TO GITHUB ##"
-	echo ""
-	cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
+	ssh-add ~/.ssh/my_key 2> /dev/null
 }
 
 install "Git" init
 
+echo "Public key copied to clipboard"
+echo "## COPY THIS PUBLIC KEY TO GITHUB ##"
+echo ""
+cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
 waitFor "Press Enter to Continue Installation"
 
 install Dotfiles git clone --quiet git@github.com:logiXbomb/dotfiles.git ~/dotfiles
