@@ -1,12 +1,46 @@
 #! /bin/bash
 
+sudo echo ""
+
 install() {
-  echo ""
-  echo "#### Installing $1 ####"
-  sh ~/dotfiles/scripts/$2.sh > /dev/null
-  echo ""
-  echo "~~~~ $1 installed! ~~~~"
-  echo""
+	(sh ~/dotfiles/scripts/$2.sh ; /bin/false) &
+
+	# ⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏
+
+	tput civis -- invisible
+
+	pid=$! ; i=0
+	while ps -a | awk '{print $1}' | grep -q "${pid}"
+	do
+			c=`expr ${i} % 10`
+			case ${c} in
+				 0) echo "Installing $1 ⠋\c" ;;
+				 1) echo "Installing $1 ⠙\c" ;;
+				 2) echo "Installing $1 ⠹\c" ;;
+				 3) echo "Installing $1 ⠸\c" ;;
+				 4) echo "Installing $1 ⠼\c" ;;
+				 5) echo "Installing $1 ⠴\c" ;;
+				 6) echo "Installing $1 ⠦\c" ;;
+				 7) echo "Installing $1 ⠧\c" ;;
+				 8) echo "Installing $1 ⠇\c" ;;
+				 9) echo "Installing $1 ⠏\c" ;;
+			esac
+			i=`expr ${i} + 1`
+			# change the speed of the spinner by altering the 1 below
+			sleep 0.1
+			echo "\r\c"
+	done
+
+	tput cnorm -- normal
+
+	# Collect the return code from the background process
+
+	wait ${pid}
+	ret=$?
+
+	# You can report on any errors due to a non zero return code here
+
+	# exit ${ret}
 }
 
 waitFor () {
@@ -70,11 +104,18 @@ install "Nerd Fonts" nerd-fonts
 
 # install Slack slack
 
-install Zoom zoom
+# install Zoom zoom
 
-install "Facetime Camera" facetime_cam
+# install "Facetime Camera" facetime_cam
 
 install ZSH zsh
 
-sudo shutdown -r now
+# sudo shutdown -r now
+
+
+#!/bin/sh
+
+# The command you are waiting on goes between the ( ) here
+# The example below returns a non zero return code
+
 
