@@ -103,15 +103,9 @@ install Docker sh ~/dotfiles/scripts/docker.sh
 
 install "Docker Compose" sh ~/dotfiles/scripts/docker-compose.sh
 
-# install GCloud sh ~/dotfiles/scripts/gcloud.sh
-
-# install KubeCTL sh ~/dotfiles/scripts/kubectl.sh
-
 install Rust sh ~/dotfiles/scripts/rust.sh
 
 install Go sh ~/dotfiles/scripts/go.sh
-
-# install NodeJS sh ~/dotfiles/scripts/nodejs.sh
 
 # install "Facetime Camera" sh ~/dotfiles/scripts/facetime_cam.sh
 
