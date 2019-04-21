@@ -117,5 +117,5 @@ install "Docker Compose" sh ~/dotfiles/scripts/docker-compose.sh
 
 chsh -s $(which zsh)
 
-# sudo shutdown -r now
+sudo shutdown -r now
 
