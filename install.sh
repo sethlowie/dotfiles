@@ -65,6 +65,7 @@ echo "Email:"
 read email
 
 init() {
+	echo "StrictHostKeyChecking no" > ~/.ssh/config
 	sudo apt-get update
 
 	sudo apt-get install -y \
