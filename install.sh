@@ -107,7 +107,7 @@ install TMUX sh ~/dotfiles/scripts/tmux.sh
 
 # install NodeJS sh ~/dotfiles/scripts/nodejs.sh
 
-# install Alacritty sh ~/dotfiles/scripts/alacritty.sh
+install Alacritty sh ~/dotfiles/scripts/alacritty.sh
 
 install "Nerd Fonts" sh ~/dotfiles/scripts/nerd-fonts.sh
 
