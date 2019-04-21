@@ -13,3 +13,5 @@ pip3 install neovim
 
 echo "source ~/dotfiles/vim/vimrc.vim" >> "$HOME/.vimrc"
 
+vim +'PlugInstall --sync' +qa
+

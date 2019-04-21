@@ -107,9 +107,9 @@ install "Docker Compose" sh ~/dotfiles/scripts/docker-compose.sh
 
 # install KubeCTL sh ~/dotfiles/scripts/kubectl.sh
 
-# install Rust sh ~/dotfiles/scripts/rust.sh
+install Rust sh ~/dotfiles/scripts/rust.sh
 
-# install Go sh ~/dotfiles/scripts/go.sh
+install Go sh ~/dotfiles/scripts/go.sh
 
 # install NodeJS sh ~/dotfiles/scripts/nodejs.sh
 
