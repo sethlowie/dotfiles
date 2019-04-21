@@ -1,6 +1,8 @@
-sudo snap install node --edge --classic
+#! /bin/bash
 
-mkdir ~/.npm-global
+cd /tmp
 
-npm config set prefix '~/.npm-global'
+curl -O https://nodejs.org/dist/v11.14.0/node-v11.14.0-linux-x64.tar.xz
+
+tar zxvf node-v11.14.0-linux-x64.tar.xz
 

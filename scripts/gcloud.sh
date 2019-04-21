@@ -3,17 +3,15 @@ cd /tmp
 
 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-242.0.0-linux-x86_64.tar.gz
 
-tar zxvf google-cloud-sdk-242.0.0-linux-x86_64.tar.gz
+tar zxvf google-cloud-sdk-242.0.0-linux-x86_64.tar.gz -C $HOME
 
-./google-cloud-sdk/install.sh
-
-source ~/.zshrc
+$HOME/google-cloud-sdk/install.sh
 
 # SETUP
-gcloud init
+~/google-cloud-sdk/bin/gcloud init
 
 # GET APPLICATION DEFAULT FOR RUNNING LOCALLY AND TALKING TO THE CLOUD
-gcloud auth application-default login
+~/google-cloud-sdk/bin/gcloud auth application-default login
 
 # CONFIGURE GCLOUD CONTAINER REGISTRY
-gcloud auth configure-docker
+~/google-cloud-sdk/bin/gcloud auth configure-docker

@@ -2,5 +2,5 @@
 
 sudo apt-get install -y tmux
 
-echo "source ~/dotfiles/tmux/tmux.conf" >> "~/.tmux.conf"
+echo "source ~/dotfiles/tmux/tmux.conf" >> "$HOME/.tmux.conf"
 
