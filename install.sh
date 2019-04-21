@@ -89,9 +89,9 @@ echo "\r\c"
 
 install Dotfiles git clone --quiet git@github.com:logiXbomb/dotfiles.git ~/dotfiles
 
-install Vim sh ~/dotfiles/scripts/vim.sh
+# install Vim sh ~/dotfiles/scripts/vim.sh
 
-install TMUX sh ~/dotfiles/scripts/tmux.sh
+# install TMUX sh ~/dotfiles/scripts/tmux.sh
 
 # install Docker sh ~/dotfiles/scripts/docker.sh
 
@@ -105,9 +105,9 @@ install TMUX sh ~/dotfiles/scripts/tmux.sh
 
 # install NodeJS sh ~/dotfiles/scripts/nodejs.sh
 
-install Alacritty sh ~/dotfiles/scripts/alacritty.sh
+# install Alacritty sh ~/dotfiles/scripts/alacritty.sh
 
-install "Nerd Fonts" sh ~/dotfiles/scripts/nerd-fonts.sh
+# install "Nerd Fonts" sh ~/dotfiles/scripts/nerd-fonts.sh
 
 # install Slack sh ~/dotfiles/scripts/slack.sh
 
@@ -115,7 +115,7 @@ install "Nerd Fonts" sh ~/dotfiles/scripts/nerd-fonts.sh
 
 # install "Facetime Camera" sh ~/dotfiles/scripts/facetime_cam.sh
 
-install ZSH sh ~/dotfiles/scripts/zsh.sh
+# install ZSH sh ~/dotfiles/scripts/zsh.sh
 
 # sudo shutdown -r now
 
