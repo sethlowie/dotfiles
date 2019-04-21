@@ -99,9 +99,9 @@ install "Nerd Fonts" sh ~/dotfiles/scripts/nerd-fonts.sh
 
 install ZSH sh ~/dotfiles/scripts/zsh.sh
 
-# install Docker sh ~/dotfiles/scripts/docker.sh
+install Docker sh ~/dotfiles/scripts/docker.sh
 
-# install "Docker Compose" sh ~/dotfiles/scripts/docker-compose.sh
+install "Docker Compose" sh ~/dotfiles/scripts/docker-compose.sh
 
 # install GCloud sh ~/dotfiles/scripts/gcloud.sh
 
@@ -114,6 +114,8 @@ install ZSH sh ~/dotfiles/scripts/zsh.sh
 # install NodeJS sh ~/dotfiles/scripts/nodejs.sh
 
 # install "Facetime Camera" sh ~/dotfiles/scripts/facetime_cam.sh
+
+chsh -s $(which zsh)
 
 # sudo shutdown -r now
 
