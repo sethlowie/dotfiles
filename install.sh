@@ -5,7 +5,7 @@ sudo echo ""
 install() {
 	local name="$1"
 	shift 1
-	("$@" 2> /dev/null ; /bin/false) &
+	("$@" >/dev/null 2>&1 ; /bin/false) &
 
 	# ⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏
 
@@ -83,11 +83,9 @@ init() {
 
 install "Git" init
 
-echo "Public key copied to clipboard"
-echo "## COPY THIS PUBLIC KEY TO GITHUB ##"
-echo ""
 cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
-waitFor "Press Enter to Continue Installation"
+waitFor "Add Key to Github and Press Enter to Continue Installation"
+echo "\r\c"
 
 install Dotfiles git clone --quiet git@github.com:logiXbomb/dotfiles.git ~/dotfiles
 

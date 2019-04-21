@@ -108,7 +108,7 @@ main() {
   echo 'p.p.s. Get stickers, shirts, and coffee mugs at https://shop.planetargon.com/collections/oh-my-zsh'
   echo ''
   printf "${NORMAL}"
-  # env zsh -l
+  env zsh -l
 }
 
 main
