@@ -111,5 +111,7 @@ install Go sh ~/dotfiles/scripts/go.sh
 
 chsh -s $(which zsh)
 
+vim +'PlugInstall --sync' +qa
+
 sudo shutdown -r now
 
