@@ -1,6 +1,6 @@
 #! /bin/bash
 
-curl https://sh.rustup.rs -sSf | sh -y
+curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 . $HOME/.cargo/env
 
