@@ -1,8 +1,8 @@
 #! /bin/bash
 
-cd /tmp
+sudo apt-get install nodejs npm -y
 
-curl -O https://nodejs.org/dist/v11.14.0/node-v11.14.0-linux-x64.tar.xz
+mkdir ~/.npm-global
 
-tar zxvf node-v11.14.0-linux-x64.tar.xz
+npm config set prefix '~/.npm-global'
 

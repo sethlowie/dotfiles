@@ -107,6 +107,10 @@ install Rust sh ~/dotfiles/scripts/rust.sh
 
 install Go sh ~/dotfiles/scripts/go.sh
 
+install Node sh ~/dotfiles/scripts/nodejs.sh
+
+install Elm sh ~/dotfiles/scripts/elm.sh
+
 # install "Facetime Camera" sh ~/dotfiles/scripts/facetime_cam.sh
 
 chsh -s $(which zsh)
