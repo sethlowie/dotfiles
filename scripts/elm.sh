@@ -8,5 +8,5 @@ tar xvzf binaries-for-linux.tar.gz
 
 sudo mv ./elm /usr/local/bin
 
-npm i -g elm-format elm-oracle
+npm i -g elm-format elm-oracle elm-live
 
