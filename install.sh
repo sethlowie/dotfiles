@@ -111,8 +111,6 @@ install Node sh ~/dotfiles/scripts/nodejs.sh
 
 install Elm sh ~/dotfiles/scripts/elm.sh
 
-# install "Facetime Camera" sh ~/dotfiles/scripts/facetime_cam.sh
-
 chsh -s $(which zsh)
 
 vim +'PlugInstall --sync' +qa

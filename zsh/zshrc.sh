@@ -23,6 +23,11 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 	vcs
 )
 
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+	command_execution_time
+	time
+)
+
 # GO STUFF
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
