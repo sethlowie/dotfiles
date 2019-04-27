@@ -111,6 +111,8 @@ install Node sh ~/dotfiles/scripts/nodejs.sh
 
 install Elm sh ~/dotfiles/scripts/elm.sh
 
+install Desktop sh ~/dotfiles/scripts/desktop.sh
+
 chsh -s $(which zsh)
 
 vim +'PlugInstall --sync' +qa

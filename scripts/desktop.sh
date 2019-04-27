@@ -1,5 +1,7 @@
 sudo apt-get install gnome-tweaks -y
 
+ln -s ~/dotfiles/files/gtk.css ~/.config/gtk-3.0/gtk.css
+
 # Remove App Close Button
 gsettings set org.gnome.desktop.wm.preferences button-layout ''
 
