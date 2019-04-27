@@ -115,13 +115,5 @@ chsh -s $(which zsh)
 
 vim +'PlugInstall --sync' +qa
 
-git clone git@github.com:logiXbomb/workfiles.git $HOME/workfiles
-
-zsh $HOME/workfiles/setup.sh
-
-zsh $HOME/dotfiles/scripts/kubectl.sh
-
-zsh $HOME/dotfiles/scripts/gcloud.sh
-
 sudo shutdown -r now
 
