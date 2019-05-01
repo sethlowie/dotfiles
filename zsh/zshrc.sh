@@ -12,13 +12,26 @@ case "$HOST" in
 		;;
 esac
 
+shortKubeContext() {
+	case "$(kubectl config current-context)" in
+		"gke_fusion-dev-163815_us-east1-b_tonka-dev-cluster")
+			echo "dev"
+			;;
+		"gke_platform-prod-156220_us-east1-d_tonka-production-cluster")
+			echo "prod"
+			;;
+	esac
+}
+
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_CUSTOM_HOST="echo $HOST"
 POWERLEVEL9K_CUSTOM_HOST_BACKGROUND="$chColor"
+POWERLEVEL9K_CUSTOM_KUBECONTEXT="shortKubeContext"
+POWERLEVEL9K_CUSTOM_KUBECONTEXT_BACKGROUND="red"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-	custom_host
+	custom_kubecontext
 	dir
 	vcs
 )
