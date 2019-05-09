@@ -23,6 +23,8 @@ shortKubeContext() {
 	esac
 }
 
+alias run-elm="elm-live src/Main.elm --open -- --output=elm.js --debug"
+
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_CUSTOM_HOST="echo $HOST"
