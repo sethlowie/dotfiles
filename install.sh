@@ -113,6 +113,8 @@ install Elm sh ~/dotfiles/scripts/elm.sh
 
 install Desktop sh ~/dotfiles/scripts/desktop.sh
 
+install "Linux Containers" sh ~/dotfiles/scripts/linuxcontainers.sh
+
 chsh -s $(which zsh)
 
 vim +'PlugInstall --sync' +qa
