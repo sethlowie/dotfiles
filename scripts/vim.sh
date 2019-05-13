@@ -11,5 +11,7 @@ sudo apt-get install -y neovim python-neovim python3-neovim
 # Install neovim library for vim deoplete
 pip3 install neovim
 
+mkdir -p $HOME/.config/nvim
+
 echo "source ~/dotfiles/vim/vimrc.vim" >> "$HOME/.config/nvim/init.vim"
 
