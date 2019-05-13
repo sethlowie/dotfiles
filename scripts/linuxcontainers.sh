@@ -1,4 +1,4 @@
-sudo apt-get install -y lxd lxd-client
+sudo snap install lxd --channel=3.0/stable
 
 sudo lxd init --auto
 
