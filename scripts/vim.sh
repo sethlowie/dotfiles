@@ -2,14 +2,14 @@
 
 # Install vim-plug
 # https://github.com/junegunn/vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install pip3
-sudo apt-get install -y vim-gtk3 python3-pip
+sudo apt-get install -y neovim python-neovim python3-neovim
 
 # Install neovim library for vim deoplete
 pip3 install neovim
 
-echo "source ~/dotfiles/vim/vimrc.vim" >> "$HOME/.vimrc"
+echo "source ~/dotfiles/vim/vimrc.vim" >> "$HOME/.config/nvim/init.vim"
 

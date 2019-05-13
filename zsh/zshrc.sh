@@ -50,3 +50,6 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # NODE STUFF
 export PATH=~/.npm-global/bin:$PATH
+
+# VIM STUFF
+alias vim=nvim
