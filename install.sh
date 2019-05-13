@@ -87,6 +87,8 @@ cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
 waitFor "Add Key to Github and Press Enter to Continue Installation"
 echo "\r\c"
 
+install Snap sudo apt-get install -y snapd
+
 install Dotfiles git clone --quiet git@github.com:logiXbomb/dotfiles.git ~/dotfiles
 
 install Vim sh ~/dotfiles/scripts/vim.sh
