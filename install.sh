@@ -115,6 +115,8 @@ install Desktop sh ~/dotfiles/scripts/desktop.sh
 
 install "Linux Containers" sh ~/dotfiles/scripts/linuxcontainers.sh
 
+install Chrome sh ~/dotfiles/scripts/chrome.sh
+
 chsh -s $(which zsh)
 
 vim +'PlugInstall --sync' +qa
