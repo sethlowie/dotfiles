@@ -122,6 +122,7 @@ install Chrome sh ~/dotfiles/scripts/chrome.sh
 chsh -s $(which zsh)
 
 nvim +'PlugInstall --sync' +qa
+nvim +'UpdateRemotePlugins' +qa
 
 sudo shutdown -r now
 
