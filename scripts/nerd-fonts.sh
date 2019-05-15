@@ -12,8 +12,6 @@ font="Iosevka"
 # font="FiraCode"
 # font="FiraCode"
 
-https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip
-
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/$font.zip
 
 mkdir -p $HOME/.local/share/fonts/NerdFonts
