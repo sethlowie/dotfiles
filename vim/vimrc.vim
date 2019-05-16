@@ -46,7 +46,7 @@ let g:go_highlight_build_constraints = 1
 :set backspace=indent,eol,start
 
 " Allows Emmet Expansion with the Tab key
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 let g:deoplete#enable_at_startup = 1
 
