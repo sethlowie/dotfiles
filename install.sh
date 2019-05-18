@@ -16,16 +16,16 @@ install() {
 	do
 			c=`expr ${i} % 10`
 			case ${c} in
-				 0) echo "Installing $name \033[0;36m⠋\033[0m\c" ;;
-				 1) echo "Installing $name \033[0;36m⠙\033[0m\c" ;;
-				 2) echo "Installing $name \033[0;36m⠹\033[0m\c" ;;
-				 3) echo "Installing $name \033[0;36m⠸\033[0m\c" ;;
-				 4) echo "Installing $name \033[0;36m⠼\033[0m\c" ;;
-				 5) echo "Installing $name \033[0;36m⠴\033[0m\c" ;;
-				 6) echo "Installing $name \033[0;36m⠦\033[0m\c" ;;
-				 7) echo "Installing $name \033[0;36m⠧\033[0m\c" ;;
-				 8) echo "Installing $name \033[0;36m⠇\033[0m\c" ;;
-				 9) echo "Installing $name \033[0;36m⠏\033[0m\c" ;;
+				 0) echo " \033[0;36m⠋\033[0m Installing $name\c" ;;
+				 1) echo " \033[0;36m⠙\033[0m Installing $name\c" ;;
+				 2) echo " \033[0;36m⠹\033[0m Installing $name\c" ;;
+				 3) echo " \033[0;36m⠸\033[0m Installing $name\c" ;;
+				 4) echo " \033[0;36m⠼\033[0m Installing $name\c" ;;
+				 5) echo " \033[0;36m⠴\033[0m Installing $name\c" ;;
+				 6) echo " \033[0;36m⠦\033[0m Installing $name\c" ;;
+				 7) echo " \033[0;36m⠧\033[0m Installing $name\c" ;;
+				 8) echo " \033[0;36m⠇\033[0m Installing $name\c" ;;
+				 9) echo " \033[0;36m⠏\033[0m Installing $name\c" ;;
 			esac
 			i=`expr ${i} + 1`
 			# change the speed of the spinner by altering the 1 below
@@ -35,7 +35,7 @@ install() {
 
 	echo "\r\c"
 
-	echo "$name installed \033[1;32m✓ \033[0m\c"
+	echo " \033[1;32m✓ \033[0m $name installed\c"
 
 	echo ""
 
