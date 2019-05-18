@@ -67,7 +67,8 @@ init() {
 	sudo apt-get install -y \
 		git \
 		xclip \
-		curl
+		curl \
+		bash-completion
 
 	git config --global user.name "$name"
 	git config --global user.email "$email"
