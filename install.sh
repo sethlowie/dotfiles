@@ -16,28 +16,23 @@ install() {
 	do
 			c=`expr ${i} % 10`
 			case ${c} in
-				 0) echo " \033[0;36m⠋\033[0m Installing $name\c" ;;
-				 1) echo " \033[0;36m⠙\033[0m Installing $name\c" ;;
-				 2) echo " \033[0;36m⠹\033[0m Installing $name\c" ;;
-				 3) echo " \033[0;36m⠸\033[0m Installing $name\c" ;;
-				 4) echo " \033[0;36m⠼\033[0m Installing $name\c" ;;
-				 5) echo " \033[0;36m⠴\033[0m Installing $name\c" ;;
-				 6) echo " \033[0;36m⠦\033[0m Installing $name\c" ;;
-				 7) echo " \033[0;36m⠧\033[0m Installing $name\c" ;;
-				 8) echo " \033[0;36m⠇\033[0m Installing $name\c" ;;
-				 9) echo " \033[0;36m⠏\033[0m Installing $name\c" ;;
+				 0) echo -e " \033[0;36m⠋\033[0m Installing $name\r\c" ;;
+				 1) echo -e " \033[0;36m⠙\033[0m Installing $name\r\c" ;;
+				 2) echo -e " \033[0;36m⠹\033[0m Installing $name\r\c" ;;
+				 3) echo -e " \033[0;36m⠸\033[0m Installing $name\r\c" ;;
+				 4) echo -e " \033[0;36m⠼\033[0m Installing $name\r\c" ;;
+				 5) echo -e " \033[0;36m⠴\033[0m Installing $name\r\c" ;;
+				 6) echo -e " \033[0;36m⠦\033[0m Installing $name\r\c" ;;
+				 7) echo -e " \033[0;36m⠧\033[0m Installing $name\r\c" ;;
+				 8) echo -e " \033[0;36m⠇\033[0m Installing $name\r\c" ;;
+				 9) echo -e " \033[0;36m⠏\033[0m Installing $name\r\c" ;;
 			esac
 			i=`expr ${i} + 1`
 			# change the speed of the spinner by altering the 1 below
 			sleep 0.1
-			echo "\r\c"
 	done
 
-	echo "\r\c"
-
-	echo " \033[1;32m✓ \033[0m $name installed\c"
-
-	echo ""
+	echo -e " \033[1;32m✓ \033[0m $name installed\r"
 
 	tput cnorm -- normal
 
@@ -52,10 +47,11 @@ install() {
 }
 
 waitFor () {
-  echo $1
+  echo -e $1 
   stty -echo
   read x
   stty echo
+	tput el
 }
 
 echo "Name:"
@@ -81,11 +77,10 @@ init() {
 	ssh-add ~/.ssh/my_key 2> /dev/null
 }
 
-install "Git" init
+# install "Git" init
 
-cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
-waitFor "Add Key to Github and Press Enter to Continue Installation"
-echo "\r\c"
+# cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
+waitFor "Add Key to Github and Press Enter to Continue Installation\r\c"
 
 install Snap sudo apt-get install -y snapd
 
