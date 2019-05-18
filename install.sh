@@ -77,9 +77,9 @@ init() {
 	ssh-add ~/.ssh/my_key 2> /dev/null
 }
 
-# install "Git" init
+install "Git" init
 
-# cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
+cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
 waitFor "Add Key to Github and Press Enter to Continue Installation\r\c"
 
 install Snap sudo apt-get install -y snapd
