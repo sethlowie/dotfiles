@@ -43,6 +43,8 @@ let g:go_highlight_build_constraints = 1
 
 :set tabstop=2
 :set shiftwidth=2
+:set softtabstop=0
+:set expandtab
 :set backspace=indent,eol,start
 
 " Allows Emmet Expansion with the Tab key
