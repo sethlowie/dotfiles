@@ -17,6 +17,8 @@ Plug 'janko/vim-test'
 
 call plug#end()
 
+let mapleader = ","
+
 " EDITOR SETTINGS
 if has("termguicolors")
 	:set termguicolors
@@ -33,6 +35,13 @@ let g:netrw_liststyle=3
 
 set number
 let g:go_disable_autoinstall = 0
+
+" VIM TEST MAPPINGS
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tg :TestVisit<CR>
 
 " Highlight
 let g:go_highlight_functions = 1
