@@ -53,3 +53,6 @@ export PATH=~/.npm-global/bin:$PATH
 
 # VIM STUFF
 alias vim=nvim
+
+# GIT STUFF
+git config --global core.editor "vim"
