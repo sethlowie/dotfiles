@@ -115,6 +115,10 @@ install "Linux Containers" sh ~/dotfiles/scripts/linuxcontainers.sh
 
 install Chrome sh ~/dotfiles/scripts/chrome.sh
 
+install Slack sh ~/dotfiles/scripts/slack.sh
+
+install Zoom sh ~/dotfiles/scripts/zoom.sh
+
 chsh -s $(which zsh)
 
 nvim +'PlugInstall --sync' +qa
