@@ -14,12 +14,15 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-commentary'
 Plug 'vim-syntastic/syntastic'
 Plug 'janko/vim-test'
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 call plug#end()
 
 let mapleader = ","
 
-" EDITOR SETTINGS
+" #### EDITOR SETTINGS ####
 if has("termguicolors")
 	:set termguicolors
 endif
@@ -36,14 +39,23 @@ let g:netrw_liststyle=3
 set number
 let g:go_disable_autoinstall = 0
 
-" VIM TEST MAPPINGS
+" NERDTree
+map <leader><Tab> :NERDTreeToggle<CR>
+let NERDTreeShowLineNumbers=1
+autocmd FileType nerdtree setlocal relativenumber
+map <leader>gr :OpenBookmark renderer<CR>
+map <leader>gp :OpenBookmark platform<CR>
+map <leader>ga :OpenBookmark apps<CR>
+map <leader>gd :OpenBookmark digital<CR>
+
+" #### VIM TEST MAPPINGS ####
 nmap <silent> <leader>tn :TestNearest<CR>
 nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tg :TestVisit<CR>
 
-" Highlight
+" #### Highlight ####
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_methods = 1
@@ -71,4 +83,9 @@ let g:deoplete#enable_at_startup = 1
 
 " GO SETTINGS
 let g:go_fmt_command = "goimports"
+let test#go#runner = 'richgo'
 
+
+" ELM SETTINGS
+autocmd FileType elm
+       \ call deoplete#custom#buffer_option('auto_complete', v:false)
