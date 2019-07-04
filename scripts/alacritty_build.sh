@@ -1,7 +1,7 @@
 #! /bin/bash
 
 cd /tmp
-git clone git@github.com:logiXbomb/alacritty.git
+git clone git@github.com:jwilm/alacritty.git
 cd alacritty
 
 sudo apt-get install -y \

@@ -18,18 +18,23 @@ Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
 let mapleader = ","
 
 " #### EDITOR SETTINGS ####
-if has("termguicolors")
-	:set termguicolors
-endif
+" if has("termguicolors")
+" 	:set termguicolors
+" endif
 :set syntax=on
 :set background=dark
-colorscheme material
+" let g:codedark_conservative = 1
+colorscheme codedark
+let g:airline_them = 'codedark'
+
+let g:airline_powerline_fonts = 1
 
 :set path+=**
 :set wildmenu
