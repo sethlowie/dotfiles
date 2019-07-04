@@ -17,6 +17,7 @@ Plug 'janko/vim-test'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
@@ -43,10 +44,18 @@ let g:go_disable_autoinstall = 0
 map <leader><Tab> :NERDTreeToggle<CR>
 let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+" bookmarks
 map <leader>gr :OpenBookmark renderer<CR>
 map <leader>gp :OpenBookmark platform<CR>
 map <leader>ga :OpenBookmark apps<CR>
 map <leader>gd :OpenBookmark digital<CR>
+
+" open on empty file
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " #### VIM TEST MAPPINGS ####
 nmap <silent> <leader>tn :TestNearest<CR>
