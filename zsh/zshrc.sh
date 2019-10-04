@@ -20,6 +20,9 @@ shortKubeContext() {
 		"gke_platform-prod-156220_us-east1-d_tonka-production-cluster")
 			echo "prod"
 			;;
+    "gke_powerchord-dx_us-east1-b_slowie")
+      echo "workstation"
+      ;;
 	esac
 }
 

@@ -89,6 +89,8 @@ install Dotfiles git clone --quiet git@github.com:logiXbomb/dotfiles.git ~/dotfi
 
 install Vim sh ~/dotfiles/scripts/vim.sh
 
+install YouCompleteMe sh ~/dotfiles/scripts/ycm.sh
+
 install TMUX sh ~/dotfiles/scripts/tmux.sh
 
 install Alacritty sh ~/dotfiles/scripts/alacritty.sh

@@ -4,14 +4,15 @@ Plug 'mattn/emmet-vim'
 Plug 'elmcast/elm-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
+" Plug 'roxma/vim-hug-neovim-rpc'
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'roxma/nvim-yarp'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'kaicataldo/material.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-commentary'
+" Plug 'scrooloose/nerdcommenter'
 Plug 'vim-syntastic/syntastic'
 Plug 'janko/vim-test'
 Plug 'scrooloose/nerdtree'
@@ -19,20 +20,33 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tomasiser/vim-code-dark'
+Plug 'leafgarland/typescript-vim'
+Plug 'w0rp/ale'
+Plug 'Valloric/YouCompleteMe'
+Plug 'posva/vim-vue'
+Plug 'heavenshell/vim-tslint'
+Plug 'peitalin/vim-jsx-typescript'
+" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 call plug#end()
 
 let mapleader = ","
 
+:set completeopt = "menuone"
+
 " #### EDITOR SETTINGS ####
 " if has("termguicolors")
 " 	:set termguicolors
 " endif
+" :set foldmethod=syntax
 :set syntax=on
 :set background=dark
 " let g:codedark_conservative = 1
 colorscheme codedark
 let g:airline_them = 'codedark'
+
+vmap <leader>y "+y
+nmap <leader>p "+p
 
 let g:airline_powerline_fonts = 1
 
@@ -53,10 +67,10 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
 " bookmarks
-map <leader>gr :OpenBookmark renderer<CR>
-map <leader>gp :OpenBookmark platform<CR>
-map <leader>ga :OpenBookmark apps<CR>
-map <leader>gd :OpenBookmark digital<CR>
+" map <leader>gr :OpenBookmark renderer<CR>
+" map <leader>gp :OpenBookmark platform<CR>
+" map <leader>ga :OpenBookmark apps<CR>
+" map <leader>gd :OpenBookmark digital<CR>
 
 " open on empty file
 autocmd StdinReadPre * let s:std_in=1
@@ -68,6 +82,8 @@ nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tg :TestVisit<CR>
+
+let test#custom_runners = {'Bash': ['ShUnit2']}
 
 " #### Highlight ####
 let g:go_highlight_functions = 1
@@ -96,8 +112,14 @@ let g:deoplete#enable_at_startup = 1
 :let g:rustfmt_autosave = 1
 
 " GO SETTINGS
+nmap <silent> <leader>gr :! go run *.go<CR>
+nmap <silent> <leader>gd :GoDef<CR>
 let g:go_fmt_command = "goimports"
 let test#go#runner = 'richgo'
+
+" ALE SETTINGS
+:let b:ale_fixers = {'js': ['eslint']}
+let g:ale_linters = { 'go': ['gofmt', 'go vet'], 'javascript': ['eslint']}
 
 
 " ELM SETTINGS
