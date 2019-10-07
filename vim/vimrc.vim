@@ -24,8 +24,10 @@ Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
 Plug 'Valloric/YouCompleteMe'
 Plug 'posva/vim-vue'
-Plug 'heavenshell/vim-tslint'
+" Plug 'heavenshell/vim-tslint'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 call plug#end()
@@ -99,6 +101,18 @@ let g:go_highlight_build_constraints = 1
 :set expandtab
 :set backspace=indent,eol,start
 
+" GLOBAL GO TO
+function GoTo()
+  if &filetype ==# 'typescript' || &filetype ==# 'typescript.tsx'
+    call tsuquyomi#definition()
+  elseif &filetype ==# 'go'
+    call go#def#Jump('', 0)
+  else
+    echo &filetype
+  endif
+endfunction
+nmap <silent> <leader>gd :call GoTo()<CR>
+
 " Allows Emmet Expansion with the Tab key
 " imap <expr> <tab> emmet#expandAbbrIntelligent("\,")
 let g:user_emmet_leader_key=','
@@ -108,12 +122,17 @@ let g:deoplete#enable_at_startup = 1
 " GIT SETTINGS
 :set diffopt+=vertical
 
+" TYPESCRIPT STUFF
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+
 " RUST SETTINGS
 :let g:rustfmt_autosave = 1
 
 " GO SETTINGS
 nmap <silent> <leader>gr :! go run *.go<CR>
-nmap <silent> <leader>gd :GoDef<CR>
 let g:go_fmt_command = "goimports"
 let test#go#runner = 'richgo'
 
