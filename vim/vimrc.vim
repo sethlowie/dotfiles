@@ -4,15 +4,11 @@ Plug 'mattn/emmet-vim'
 Plug 'elmcast/elm-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'roxma/vim-hug-neovim-rpc'
-" Plug 'Shougo/deoplete.nvim'
-" Plug 'roxma/nvim-yarp'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'kaicataldo/material.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-commentary'
-" Plug 'scrooloose/nerdcommenter'
 Plug 'vim-syntastic/syntastic'
 Plug 'janko/vim-test'
 Plug 'scrooloose/nerdtree'
@@ -22,13 +18,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tomasiser/vim-code-dark'
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'posva/vim-vue'
-" Plug 'heavenshell/vim-tslint'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 call plug#end()
 
@@ -37,15 +31,28 @@ let mapleader = ","
 :set completeopt = "menuone"
 
 " #### EDITOR SETTINGS ####
-" if has("termguicolors")
-" 	:set termguicolors
-" endif
-" :set foldmethod=syntax
 :set syntax=on
 :set background=dark
-" let g:codedark_conservative = 1
 colorscheme codedark
 let g:airline_them = 'codedark'
+nmap <leader>r :! sh run.sh<CR>
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
 
 vmap <leader>y "+y
 nmap <leader>p "+p
@@ -67,12 +74,6 @@ let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-
-" bookmarks
-" map <leader>gr :OpenBookmark renderer<CR>
-" map <leader>gp :OpenBookmark platform<CR>
-" map <leader>ga :OpenBookmark apps<CR>
-" map <leader>gd :OpenBookmark digital<CR>
 
 " open on empty file
 autocmd StdinReadPre * let s:std_in=1
@@ -114,7 +115,6 @@ endfunction
 nmap <silent> <leader>gd :call GoTo()<CR>
 
 " Allows Emmet Expansion with the Tab key
-" imap <expr> <tab> emmet#expandAbbrIntelligent("\,")
 let g:user_emmet_leader_key=','
 
 let g:deoplete#enable_at_startup = 1
@@ -123,10 +123,7 @@ let g:deoplete#enable_at_startup = 1
 :set diffopt+=vertical
 
 " TYPESCRIPT STUFF
-if !exists("g:ycm_semantic_triggers")
-  let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers['typescript'] = ['.']
+autocmd FileType typescript nmap <buffer> <Leader>gt : <C-u>echo tsuquyomi#hint()<CR>
 
 " RUST SETTINGS
 :let g:rustfmt_autosave = 1
