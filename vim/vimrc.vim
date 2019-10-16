@@ -24,6 +24,7 @@ Plug 'posva/vim-vue'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 call plug#end()
 
