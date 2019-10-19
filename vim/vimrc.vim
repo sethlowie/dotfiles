@@ -125,7 +125,7 @@ let g:deoplete#enable_at_startup = 1
 :set diffopt+=vertical
 
 " TYPESCRIPT STUFF
-autocmd FileType typescript nmap <buffer> <Leader>gt : <C-u>echo tsuquyomi#hint()<CR>
+autocmd FileType typescript.tsx nmap <buffer> <leader>gt :<C-u>echo tsuquyomi#hint()<CR>
 
 " RUST SETTINGS
 :let g:rustfmt_autosave = 1
