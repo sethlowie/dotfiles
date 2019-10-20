@@ -5,5 +5,5 @@ bash -c "$(wget https://raw.githubusercontent.com/logiXbomb/dotfiles/master/inst
 ```
 
 ```bash
-bash -c "$(wget https://raw.githubusercontent.com/logiXbomb/dotfiles/master/install_mac.sh -O -)"
+bash <(curl -s https://raw.githubusercontent.com/logiXbomb/dotfiles/master/install_mac.sh)
 ```
