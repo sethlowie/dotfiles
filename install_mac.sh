@@ -63,6 +63,8 @@ read email
 init() {
 	echo "StrictHostKeyChecking no" > ~/.ssh/config
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	
+	brew install gawk
 
 	git config --global user.name "$name"
 	git config --global user.email "$email"
