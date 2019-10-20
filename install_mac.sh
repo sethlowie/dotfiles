@@ -1,7 +1,5 @@
 #! /bin/bash
 
-sudo echo ""
-
 install() {
 	local name="$1"
 	shift 1
