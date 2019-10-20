@@ -5,7 +5,7 @@ sudo echo ""
 install() {
 	local name="$1"
 	shift 1
-	("$@" >/dev/null 2>&1 ; /bin/false) &
+	("$@" >/dev/null 2>&1 ; /usr/bin/false) &
 
 	# ⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏
 
