@@ -126,6 +126,7 @@ let g:deoplete#enable_at_startup = 1
 
 " TYPESCRIPT STUFF
 autocmd FileType typescript.tsx nmap <buffer> <leader>gt :<C-u>echo tsuquyomi#hint()<CR>
+autocmd FileType typescript nmap <buffer> <leader>gt :<C-u>echo tsuquyomi#hint()<CR>
 
 " RUST SETTINGS
 :let g:rustfmt_autosave = 1
