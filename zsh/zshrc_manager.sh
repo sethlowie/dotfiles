@@ -18,3 +18,5 @@ alacrittyUpdate() {
 	cp ~/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml;
 	exit;
 }
+
+ssh-add ~/.ssh/my_key 2> /dev/null
