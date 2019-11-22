@@ -19,4 +19,4 @@ alacrittyUpdate() {
 	exit;
 }
 
-ssh-add ~/.ssh/my_key
+ssh-add ~/.ssh/my_key 2> /dev/null

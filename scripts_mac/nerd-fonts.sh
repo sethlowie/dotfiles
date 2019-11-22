@@ -21,5 +21,5 @@ font="Iosevka"
 # fc-cache -f -v
 
 brew tap homebrew/cask-fonts
-brew cask install font-isoveka-nerd-fonts
+brew cask install font-iosevka-nerd-font
 
