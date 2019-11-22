@@ -24,13 +24,28 @@ Plug 'posva/vim-vue'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'branch': 'release/1.x' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
 let mapleader = ","
 
 :set completeopt = "menuone"
+
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
 
 " #### EDITOR SETTINGS ####
 :set syntax=on
@@ -55,7 +70,6 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-
 vmap <leader>y "+y
 nmap <leader>p "+p
 
@@ -77,9 +91,9 @@ autocmd FileType nerdtree setlocal relativenumber
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
-" open on empty file
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" NERDTree open on empty file
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " #### VIM TEST MAPPINGS ####
 nmap <silent> <leader>tn :TestNearest<CR>
@@ -119,8 +133,6 @@ nmap <silent> <leader>gd :call GoTo()<CR>
 " Allows Emmet Expansion with the Tab key
 let g:user_emmet_leader_key=','
 
-let g:deoplete#enable_at_startup = 1
-
 " GIT SETTINGS
 :set diffopt+=vertical
 
@@ -137,7 +149,7 @@ let g:go_fmt_command = "goimports"
 let test#go#runner = 'richgo'
 
 " ALE SETTINGS
-:let b:ale_fixers = {'js': ['eslint']}
+let b:ale_fixers = {'js': ['eslint']}
 let g:ale_linters = { 'go': ['gofmt', 'go vet'], 'javascript': ['eslint']}
 
 

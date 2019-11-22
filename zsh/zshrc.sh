@@ -12,19 +12,12 @@ case "$HOST" in
 		;;
 esac
 
-# shortKubeContext() {
-# 	case "$(kubectl config current-context)" in
-# 		"gke_fusion-dev-163815_us-east1-b_tonka-dev-cluster")
-# 			echo "dev"
-# 			;;
-# 		"gke_platform-prod-156220_us-east1-d_tonka-production-cluster")
-# 			echo "prod"
-# 			;;
-#     "gke_powerchord-dx_us-east1-b_slowie")
-#       echo "workstation"
-#       ;;
-# 	esac
-# }
+# --files: List files that would be searched but do not search
+# --no-ignore: Do not respect .gitignore, etc...
+# --hidden: Search hidden files and folders
+# --follow: Follow symlinks
+# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 alias run-elm="elm-live src/Main.elm --open -- --output=elm.js --debug"
 
@@ -59,4 +52,14 @@ export PATH=~/.npm-global/bin:$PATH
 alias vim=nvim
 
 # GIT STUFF
-git config --global core.editor "vim"
+git config --global core.editor "nvim"
+
+# Couchbase
+function cb {
+  curl -v http://localhost:8091/_p/query/query/service \
+    -H "Content-Type: application/json" \
+    -d '{ "statement": "'$1'" }' \
+    -u cpapi:password | jq '.results' > ~/.couchbase/$1.json
+
+  nvim ~/.couchbase/$1.json
+  }
