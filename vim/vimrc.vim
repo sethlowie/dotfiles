@@ -2,12 +2,18 @@
 call plug#begin('~/.vim/plugged')
 Plug 'mattn/emmet-vim'
 Plug 'elmcast/elm-vim'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+
+" THEMES
 Plug 'kaicataldo/material.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'tomasiser/vim-code-dark'
+
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-commentary'
 Plug 'vim-syntastic/syntastic'
@@ -16,7 +22,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tomasiser/vim-code-dark'
 Plug 'leafgarland/typescript-vim'
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -49,10 +54,15 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 
 " #### EDITOR SETTINGS ####
 :set syntax=on
-:set background=dark
-colorscheme codedark
-let g:airline_them = 'codedark'
+:set mouse=a
+" :set background=nord
+colorscheme nord
+" let g:airline_them = 'nord'
 nmap <leader>r :! sh run.sh<CR>
+
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
