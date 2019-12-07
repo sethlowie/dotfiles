@@ -153,6 +153,10 @@ autocmd FileType typescript nmap <buffer> <leader>gt :<C-u>echo tsuquyomi#hint()
 " RUST SETTINGS
 :let g:rustfmt_autosave = 1
 
+" PRETTIER SETTINGS
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
 " GO SETTINGS
 nmap <silent> <leader>gr :! go run *.go<CR>
 let g:go_fmt_command = "goimports"
