@@ -104,6 +104,7 @@ let NERDTreeDirArrows = 1
 " NERDTree open on empty file
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nmap <leader>o :NERDTreeFind<CR>
 
 " #### VIM TEST MAPPINGS ####
 nmap <silent> <leader>tn :TestNearest<CR>
