@@ -89,7 +89,7 @@ install Dotfiles git clone --quiet git@github.com:logiXbomb/dotfiles.git ~/dotfi
 
 install Vim sh ~/dotfiles/scripts/vim.sh
 
-install YouCompleteMe sh ~/dotfiles/scripts/ycm.sh
+# install YouCompleteMe sh ~/dotfiles/scripts/ycm.sh
 
 install TMUX sh ~/dotfiles/scripts/tmux.sh
 
@@ -103,17 +103,17 @@ install Docker sh ~/dotfiles/scripts/docker.sh
 
 install "Docker Compose" sh ~/dotfiles/scripts/docker-compose.sh
 
-install Rust sh ~/dotfiles/scripts/rust.sh
+# install Rust sh ~/dotfiles/scripts/rust.sh
 
 install Go sh ~/dotfiles/scripts/go.sh
 
 install Node sh ~/dotfiles/scripts/nodejs.sh
 
-install Elm sh ~/dotfiles/scripts/elm.sh
+# install Elm sh ~/dotfiles/scripts/elm.sh
 
 install Desktop sh ~/dotfiles/scripts/desktop.sh
 
-install "Linux Containers" sh ~/dotfiles/scripts/linuxcontainers.sh
+# install "Linux Containers" sh ~/dotfiles/scripts/linuxcontainers.sh
 
 install Chrome sh ~/dotfiles/scripts/chrome.sh
 

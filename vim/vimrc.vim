@@ -32,6 +32,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'branch': 'release/1.x' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'chr4/nginx.vim'
 
 call plug#end()
 
