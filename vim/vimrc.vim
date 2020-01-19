@@ -147,6 +147,10 @@ let g:user_emmet_leader_key=','
 
 " GIT SETTINGS
 :set diffopt+=vertical
+nnoremap <silent> <Leader>gs :Gstatus<CR>:15wincmd_<CR>
+nnoremap <silent> <Leader>gv :Gdiffsplit<CR>
+nnoremap <silent> <Leader>gr :Gread<CR>
+nnoremap <silent> <Leader>gc :Gcommit -v<CR>
 
 " TYPESCRIPT STUFF
 autocmd FileType typescript.tsx nmap <buffer> <leader>gt :<C-u>echo tsuquyomi#hint()<CR>
@@ -160,7 +164,6 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " GO SETTINGS
-nmap <silent> <leader>gr :! go run *.go<CR>
 let g:go_fmt_command = "goimports"
 let test#go#runner = 'richgo'
 
