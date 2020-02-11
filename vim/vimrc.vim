@@ -52,7 +52,7 @@ let mapleader = ","
 " --color: Search color options
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
-
+nnoremap <C-p> :Files<Cr>
 " #### EDITOR SETTINGS ####
 :set syntax=on
 :set mouse=a
@@ -149,7 +149,7 @@ let g:user_emmet_leader_key=','
 :set diffopt+=vertical
 nnoremap <silent> <Leader>gs :Gstatus<CR>:15wincmd_<CR>
 nnoremap <silent> <Leader>gv :Gdiffsplit<CR>
-nnoremap <silent> <Leader>gr :Gread<CR>
+nnoremap <silent> <Leader>gr :Gread<CR> :w<CR> :Gcommit -v<CR>
 nnoremap <silent> <Leader>gc :Gcommit -v<CR>
 
 " TYPESCRIPT STUFF
