@@ -103,13 +103,13 @@ install Docker sh ~/dotfiles/scripts/docker.sh
 
 install "Docker Compose" sh ~/dotfiles/scripts/docker-compose.sh
 
-# install Rust sh ~/dotfiles/scripts/rust.sh
+install Rust sh ~/dotfiles/scripts/rust.sh
 
 install Go sh ~/dotfiles/scripts/go.sh
 
 install Node sh ~/dotfiles/scripts/nodejs.sh
 
-# install Elm sh ~/dotfiles/scripts/elm.sh
+install Elm sh ~/dotfiles/scripts/elm.sh
 
 install Desktop sh ~/dotfiles/scripts/desktop.sh
 
