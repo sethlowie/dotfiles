@@ -1,5 +1,7 @@
 export TERM="screen-256color"
 
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
 case "$HOST" in
 	"learn-elixir")
 		chColor="105"
@@ -67,3 +69,5 @@ function cb {
 
   nvim ~/.couchbase/$1.json
   }
+
+export NODE_PATH=$NODE_PATH:`npm root -g`

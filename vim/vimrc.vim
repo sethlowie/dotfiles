@@ -1,7 +1,6 @@
 " PLUGINS
 call plug#begin('~/.vim/plugged')
 Plug 'mattn/emmet-vim'
-Plug 'elmcast/elm-vim'
 " Plug 'vim-airline/vim-airline'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -13,6 +12,10 @@ Plug 'tpope/vim-rhubarb'
 Plug 'kaicataldo/material.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tomasiser/vim-code-dark'
+
+" Elm
+Plug 'elmcast/elm-vim'
+Plug 'andys8/vim-elm-syntax'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-commentary'
@@ -171,7 +174,3 @@ let test#go#runner = 'richgo'
 let b:ale_fixers = {'js': ['eslint']}
 let g:ale_linters = { 'go': ['gofmt', 'go vet'], 'javascript': ['eslint']}
 
-
-" ELM SETTINGS
-autocmd FileType elm
-       \ call deoplete#custom#buffer_option('auto_complete', v:false)
