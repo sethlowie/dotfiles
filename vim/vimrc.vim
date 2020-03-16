@@ -8,6 +8,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'yuki-ycino/fzf-preview.vim'
 
 " THEMES
 Plug 'kaicataldo/material.vim'
@@ -50,9 +51,9 @@ let mapleader = ","
 " --follow: Follow symlinks
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color=always '.shellescape(<q-args>), 1, <bang>0)
 
-nnoremap <C-p> :Files<Cr>
+nnoremap <C-p> :FzfPreviewDirectory<Cr>
 " #### EDITOR SETTINGS ####
 :set syntax=on
 :set mouse=a
