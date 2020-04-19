@@ -37,6 +37,7 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install', 'branch': 'release/1.x' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'chr4/nginx.vim'
+Plug 'sethlowie/vim-notes'
 
 call plug#end()
 
@@ -57,6 +58,7 @@ let mapleader = ","
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color=always '.shellescape(<q-args>), 1, <bang>0)
 
 nnoremap <C-p> :FzfPreviewDirectory<Cr>
+nnoremap <silent> <leader>f :FzfPreviewProjectGrep <C-R><C-W><CR>
 " #### EDITOR SETTINGS ####
 :set syntax=on
 :set mouse=a
@@ -157,8 +159,8 @@ nnoremap <silent> <Leader>gr :Gread<CR> :w<CR> :Gcommit -v<CR>
 nnoremap <silent> <Leader>gc :Gcommit -v<CR>
 
 " TYPESCRIPT STUFF
-autocmd FileType typescript.tsx nmap <buffer> <leader>gt :<C-u>echo tsuquyomi#hint()<CR>
-autocmd FileType typescript nmap <buffer> <leader>gt :<C-u>echo tsuquyomi#hint()<CR>
+" autocmd FileType typescript.tsx nmap <buffer> <leader>gt :<C-u>echo tsuquyomi#hint()<CR>
+" autocmd FileType typescript nmap <buffer> <leader>gt :<C-u>echo tsuquyomi#hint()<CR>
 
 " RUST SETTINGS
 :let g:rustfmt_autosave = 1
@@ -174,4 +176,33 @@ let test#go#runner = 'richgo'
 " ALE SETTINGS
 let b:ale_fixers = {'js': ['eslint']}
 let g:ale_linters = { 'go': ['gofmt', 'go vet'], 'javascript': ['eslint']}
+
+
+nnoremap <silent> <leader>gt :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+if has('patch8.1.1068')
+  " Use `complete_info` if your (Neo)Vim version supports it.
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 

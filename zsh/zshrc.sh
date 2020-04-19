@@ -42,11 +42,11 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 )
 
 # GO STUFF
-export GOROOT=/usr/local/go
+# export GOROOT=/usr/local/bin
 # export GOROOT="$(brew --prefix golang)/libexec"
 export GOPATH=$HOME/go
 # export GOROOT=$GOPATH
-export PATH=$GOPATH/bin:$GOROOT:$GOROOT/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 # Fix Go because it's terrible
 export GO111MODULE=on
