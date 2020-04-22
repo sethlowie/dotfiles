@@ -1,4 +1,4 @@
-" PLUGINS
+" ================== VIM PLUGGED ================== "
 call plug#begin('~/.vim/plugged')
 Plug 'mattn/emmet-vim'
 " Plug 'vim-airline/vim-airline'
@@ -7,12 +7,15 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'mhinz/vim-startify'
 Plug 'yuki-ycino/fzf-preview.vim'
+Plug 'psliwka/vim-smoothie'
 
 " THEMES
-Plug 'kaicataldo/material.vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'tomasiser/vim-code-dark'
+" Plug 'kaicataldo/material.vim'
+Plug 'hzchirs/vim-material'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'tomasiser/vim-code-dark'
 
 " Elm
 Plug 'elmcast/elm-vim'
@@ -20,7 +23,7 @@ Plug 'andys8/vim-elm-syntax'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-commentary'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'janko/vim-test'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
@@ -41,7 +44,31 @@ Plug 'sethlowie/vim-notes'
 
 call plug#end()
 
+" \\\\\\\\\\\\\ "
+
+
+" ================== KEY BINDINGS ================== "
+
 let mapleader = ","
+
+
+" \\\\\\\\\\\\\ "
+
+
+" ================== THEME ================== "
+
+if (has('termguicolors'))
+  set termguicolors
+endif
+
+let g:material_style='oceanic'
+set background=dark
+colorscheme vim-material
+let g:lightline = {
+      \ 'colorscheme': 'material',
+      \ }
+
+" \\\\\\\\\\\\\ "
 
 :set completeopt = "menuone"
 
@@ -62,14 +89,8 @@ nnoremap <silent> <leader>f :FzfPreviewProjectGrep <C-R><C-W><CR>
 " #### EDITOR SETTINGS ####
 :set syntax=on
 :set mouse=a
-" :set background=nord
-colorscheme nord
 " let g:airline_them = 'nord'
 nmap <leader>r :! sh run.sh<CR>
-
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -205,4 +226,3 @@ if has('patch8.1.1068')
 else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-
