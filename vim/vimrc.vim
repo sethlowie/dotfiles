@@ -15,7 +15,7 @@ Plug 'psliwka/vim-smoothie'
 " Plug 'kaicataldo/material.vim'
 Plug 'hzchirs/vim-material'
 " Plug 'arcticicestudio/nord-vim'
-" Plug 'tomasiser/vim-code-dark'
+Plug 'joshdick/onedark.vim'
 
 " Elm
 Plug 'elmcast/elm-vim'
@@ -64,6 +64,7 @@ endif
 let g:material_style='oceanic'
 set background=dark
 colorscheme vim-material
+" colorscheme onedark
 let g:lightline = {
       \ 'colorscheme': 'material',
       \ }
