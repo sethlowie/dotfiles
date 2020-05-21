@@ -1,7 +1,6 @@
 " ================== VIM PLUGGED ================== "
 call plug#begin('~/.vim/plugged')
 Plug 'mattn/emmet-vim'
-" Plug 'vim-airline/vim-airline'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
@@ -12,29 +11,30 @@ Plug 'yuki-ycino/fzf-preview.vim'
 Plug 'psliwka/vim-smoothie'
 
 " THEMES
-" Plug 'kaicataldo/material.vim'
 Plug 'hzchirs/vim-material'
-" Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 
 " Elm
 Plug 'elmcast/elm-vim'
 Plug 'andys8/vim-elm-syntax'
 
+" React
+Plug 'ianks/vim-tsx'
+
+" IDE Support
+Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-commentary'
-" Plug 'vim-syntastic/syntastic'
 Plug 'janko/vim-test'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'leafgarland/typescript-vim'
-Plug 'w0rp/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'posva/vim-vue'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
+" Plug 'peitalin/vim-jsx-typescript'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'branch': 'release/1.x' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -87,9 +87,14 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 
 nnoremap <C-p> :FzfPreviewDirectory<Cr>
 nnoremap <silent> <leader>f :FzfPreviewProjectGrep <C-R><C-W><CR>
+
 " #### EDITOR SETTINGS ####
 :set syntax=on
 :set mouse=a
+
+" coc extensions
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+
 " let g:airline_them = 'nord'
 nmap <leader>r :! sh run.sh<CR>
 
@@ -158,6 +163,8 @@ let g:go_highlight_build_constraints = 1
 :set expandtab
 :set backspace=indent,eol,start
 
+let g:typescript_indent_disable = 1
+
 " GLOBAL GO TO
 function GoTo()
   if &filetype ==# 'typescript' || &filetype ==# 'typescript.tsx'
@@ -168,7 +175,11 @@ function GoTo()
     echo &filetype
   endif
 endfunction
-nmap <silent> <leader>gd :call GoTo()<CR>
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gr <Plug>(coc-references)
+nmap <silent> <leader>gy <Plug>(coc-type-definition)
+nmap <silent> <leader>v <Plug>(coc-fix-current)
+nmap <leader>rn <Plug>(coc-rename)
 
 " Allows Emmet Expansion with the Tab key
 let g:user_emmet_leader_key=','
@@ -176,9 +187,7 @@ let g:user_emmet_leader_key=','
 " GIT SETTINGS
 :set diffopt+=vertical
 nnoremap <silent> <Leader>gs :Gstatus<CR>:15wincmd_<CR>
-nnoremap <silent> <Leader>gv :Gdiffsplit<CR>
-nnoremap <silent> <Leader>gr :Gread<CR> :w<CR> :Gcommit -v<CR>
-nnoremap <silent> <Leader>gc :Gcommit -v<CR>
+nnoremap <silent> <Leader>gc :vertical Gcommit -v<CR>
 
 " TYPESCRIPT STUFF
 " autocmd FileType typescript.tsx nmap <buffer> <leader>gt :<C-u>echo tsuquyomi#hint()<CR>
