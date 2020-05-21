@@ -189,10 +189,11 @@ let g:user_emmet_leader_key=','
 
 " GIT SETTINGS
 :set diffopt+=vertical
-nnoremap <silent> <Leader>gs :Gstatus<CR>:15wincmd_<CR>
-nnoremap <silent> <Leader>gc :vertical Gcommit -v<CR>
+nnoremap <silent> <Leader>gs :vertical Gstatus<CR>
+nnoremap <silent> <Leader>gc :Gcommit -v<CR>
 nnoremap <silent> <Leader>ss :vsp<CR>
 nnoremap <silent> <Leader>si :sp<CR>
+nnoremap <silent> <Leader>gg :45wincmd_<CR>
 
 " TYPESCRIPT STUFF
 " autocmd FileType typescript.tsx nmap <buffer> <leader>gt :<C-u>echo tsuquyomi#hint()<CR>
@@ -243,3 +244,4 @@ else
 endif
 
 :set relativenumber
+:set splitbelow
