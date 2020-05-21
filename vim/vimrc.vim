@@ -10,6 +10,9 @@ Plug 'mhinz/vim-startify'
 Plug 'yuki-ycino/fzf-preview.vim'
 Plug 'psliwka/vim-smoothie'
 
+" GAMES
+Plug 'ThePrimeagen/vim-be-good'
+
 " THEMES
 Plug 'hzchirs/vim-material'
 Plug 'joshdick/onedark.vim'
@@ -188,6 +191,8 @@ let g:user_emmet_leader_key=','
 :set diffopt+=vertical
 nnoremap <silent> <Leader>gs :Gstatus<CR>:15wincmd_<CR>
 nnoremap <silent> <Leader>gc :vertical Gcommit -v<CR>
+nnoremap <silent> <Leader>ss :vsp<CR>
+nnoremap <silent> <Leader>si :sp<CR>
 
 " TYPESCRIPT STUFF
 " autocmd FileType typescript.tsx nmap <buffer> <leader>gt :<C-u>echo tsuquyomi#hint()<CR>
@@ -236,3 +241,5 @@ if has('patch8.1.1068')
 else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
+
+:set relativenumber
