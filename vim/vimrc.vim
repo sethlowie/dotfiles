@@ -9,6 +9,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'mhinz/vim-startify'
 Plug 'yuki-ycino/fzf-preview.vim'
 Plug 'psliwka/vim-smoothie'
+Plug 'christoomey/vim-tmux-navigator'
 
 " GAMES
 Plug 'ThePrimeagen/vim-be-good'
@@ -54,7 +55,10 @@ call plug#end()
 
 let mapleader = ","
 
-
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 " \\\\\\\\\\\\\ "
 
 
@@ -169,15 +173,6 @@ let g:go_highlight_build_constraints = 1
 let g:typescript_indent_disable = 1
 
 " GLOBAL GO TO
-function GoTo()
-  if &filetype ==# 'typescript' || &filetype ==# 'typescript.tsx'
-    call tsuquyomi#definition()
-  elseif &filetype ==# 'go'
-    call go#def#Jump('', 0)
-  else
-    echo &filetype
-  endif
-endfunction
 nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gr <Plug>(coc-references)
 nmap <silent> <leader>gy <Plug>(coc-type-definition)
@@ -245,3 +240,4 @@ endif
 
 :set relativenumber
 :set splitbelow
+:set splitright
