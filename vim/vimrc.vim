@@ -8,11 +8,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'mhinz/vim-startify'
 Plug 'yuki-ycino/fzf-preview.vim'
-Plug 'psliwka/vim-smoothie'
+" Plug 'psliwka/vim-smoothie'
 Plug 'christoomey/vim-tmux-navigator'
 
 " GAMES
-Plug 'ThePrimeagen/vim-be-good'
+" Plug 'ThePrimeagen/vim-be-good'
 
 " THEMES
 Plug 'hzchirs/vim-material'
@@ -119,7 +119,9 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <Leader><space> coc#refresh()
+" inoremap <silent><expr> <c-space> coc#refresh()
+" inoremap <silent><expr> <c-space> :echo "hello"<CR>
 
 vmap <leader>y "+y
 nmap <leader>p "+p
@@ -199,7 +201,7 @@ nnoremap <silent> <Leader>gg :45wincmd_<CR>
 
 " PRETTIER SETTINGS
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " GO SETTINGS
 let g:go_fmt_command = "goimports"
