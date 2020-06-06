@@ -1,15 +1,12 @@
 " ================== VIM PLUGGED ================== "
 call plug#begin('~/.vim/plugged')
-Plug 'mattn/emmet-vim'
-Plug 'itchyny/lightline.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'mhinz/vim-startify'
 Plug 'yuki-ycino/fzf-preview.vim'
-" Plug 'psliwka/vim-smoothie'
 Plug 'christoomey/vim-tmux-navigator'
+
+" GIT
+Plug 'tpope/vim-fugitive'
 
 " GAMES
 " Plug 'ThePrimeagen/vim-be-good'
@@ -17,8 +14,11 @@ Plug 'christoomey/vim-tmux-navigator'
 " THEMES
 Plug 'hzchirs/vim-material'
 Plug 'joshdick/onedark.vim'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Elm
+Plug 'mattn/emmet-vim'
 Plug 'elmcast/elm-vim'
 Plug 'andys8/vim-elm-syntax'
 
@@ -26,8 +26,12 @@ Plug 'andys8/vim-elm-syntax'
 Plug 'ianks/vim-tsx'
 
 " IDE Support
-Plug 'w0rp/ale'
+" Plug 'ycm-core/YouCompleteMe'
+" Plug 'w0rp/ale'
+Plug 'itchyny/lightline.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'mhinz/vim-startify'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-commentary'
@@ -63,17 +67,15 @@ nnoremap <C-H> <C-W><C-H>
 
 
 " ================== THEME ================== "
-
 if (has('termguicolors'))
   set termguicolors
 endif
-
-let g:material_style='oceanic'
+" let g:material_style='oceanic'
 set background=dark
-colorscheme vim-material
-" colorscheme onedark
+" colorscheme vim-material
+colorscheme dracula
 let g:lightline = {
-      \ 'colorscheme': 'material',
+      \ 'colorscheme': 'dracula',
       \ }
 
 " \\\\\\\\\\\\\ "
@@ -104,24 +106,6 @@ let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet',
 
 " let g:airline_them = 'nord'
 nmap <leader>r :! sh run.sh<CR>
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <Leader><space> coc#refresh()
-" inoremap <silent><expr> <c-space> coc#refresh()
-" inoremap <silent><expr> <c-space> :echo "hello"<CR>
 
 vmap <leader>y "+y
 nmap <leader>p "+p
@@ -173,13 +157,6 @@ let g:go_highlight_build_constraints = 1
 :set backspace=indent,eol,start
 
 let g:typescript_indent_disable = 1
-
-" GLOBAL GO TO
-nmap <silent> <leader>gd <Plug>(coc-definition)
-nmap <silent> <leader>gr <Plug>(coc-references)
-nmap <silent> <leader>gy <Plug>(coc-type-definition)
-nmap <silent> <leader>v <Plug>(coc-fix-current)
-nmap <leader>rn <Plug>(coc-rename)
 
 " Allows Emmet Expansion with the Tab key
 let g:user_emmet_leader_key=','
@@ -243,3 +220,38 @@ endif
 :set relativenumber
 :set splitbelow
 :set splitright
+
+" COMPLETIONS
+" fun! GoYCM() 
+"   nnoremap <buffer> <silent> <Leader>gd :YouCompleter GoTo<CR>
+"   nnoremap <buffer> <silent> <Leader>gr :YouCompleter GoToReferences<CR>
+"   nnoremap <buffer> <silent> <Leader>rr :YouCompleter RefactorName<CR>
+" endfun
+
+" fun! GoCoc()
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+
+
+  " Use tab for trigger completion with characters ahead and navigate.
+  " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  inoremap <silent><expr> <Leader>c coc#refresh()
+
+  nmap <buffer> <Leader>gd <Plug>(coc-definition)
+  nmap <buffer> <Leader>gy <Plug>(coc-type-definition)
+  nmap <buffer> <Leader>gr <Plug>(coc-references)
+  nmap <buffer> <Leader>v <Plug>(coc-fix-current)
+  nmap <buffer> <Leader>rr <Plug>(coc-rename)
+" endfun
+
+" autocmd FileType typescript,javascript,elm :call GoYCM()
+" autocmd FileType html :call GoYCM()
+:set noshowmode
