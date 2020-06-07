@@ -52,8 +52,6 @@ alias evrc="vim ~/dotfiles/vim/vimrc.vim"
 # GIT STUFF
 git config --global core.editor "nvim"
 
-export NODE_PATH=$NODE_PATH:`npm root -g`
-
 export CBROOT=/Applications/Couchbase\ Server.app/Contents/Resources/couchbase-core/bin
 
 export PATH=$PATH:$CBROOT:$CBROOT/tools:$CBROOT/intall
