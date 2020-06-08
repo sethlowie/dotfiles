@@ -1,6 +1,7 @@
 zplug "dracula/zsh", as:theme
 
 export TERM="screen-256color"
+export BAT_THEME="Dracula"
 
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME="dracula"
