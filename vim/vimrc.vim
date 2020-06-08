@@ -76,6 +76,15 @@ set background=dark
 colorscheme dracula
 let g:lightline = {
       \ 'colorscheme': 'dracula',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paster' ],
+      \             [ 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ ['lineinfo'],
+      \              [ 'gitbranch' ] ],
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ }
       \ }
 
 " \\\\\\\\\\\\\ "
