@@ -254,11 +254,14 @@ endif
 
   inoremap <silent><expr> <Leader>c coc#refresh()
 
-  nmap <buffer> <Leader>gd <Plug>(coc-definition)
-  nmap <buffer> <Leader>gy <Plug>(coc-type-definition)
-  nmap <buffer> <Leader>gr <Plug>(coc-references)
-  nmap <buffer> <Leader>v <Plug>(coc-fix-current)
-  nmap <buffer> <Leader>rr <Plug>(coc-rename)
+  nmap <silent> <Leader>gd <Plug>(coc-definition)
+  nmap <silent> <Leader>gy <Plug>(coc-type-definition)
+  nmap <silent> <Leader>gi <Plug>(coc-implementation)
+  nmap <silent> <Leader>gr <Plug>(coc-references)
+  nmap <silent> <Leader>ge <Plug>(coc-diagnostic-next)
+  nmap <silent> <Leader>gE <Plug>(coc-diagnostic-prev)
+  nmap <silent> <Leader>v <Plug>(coc-fix-current)
+  nmap <silent> <Leader>rr <Plug>(coc-rename)
 " endfun
 
 " autocmd FileType typescript,javascript,elm :call GoYCM()
