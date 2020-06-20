@@ -4,6 +4,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-rhubarb'
 Plug 'yuki-ycino/fzf-preview.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-surround'
 
 " GIT
 Plug 'tpope/vim-fugitive'
@@ -267,3 +268,9 @@ endif
 " autocmd FileType typescript,javascript,elm :call GoYCM()
 " autocmd FileType html :call GoYCM()
 :set noshowmode
+
+" COC EXPLORER
+:nmap <Leader>e :CocCommand explorer --quit-on-open<CR>
+:nmap <Leader>E :CocCommand explorer --quit-on-open --reveal<CR>
+
+:nmap <silent> <Leader>af :CocCommand eslint.executeAutofix<CR>
