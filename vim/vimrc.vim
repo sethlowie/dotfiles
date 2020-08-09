@@ -36,7 +36,7 @@ Plug 'mhinz/vim-startify'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-commentary'
-Plug 'janko/vim-test'
+Plug 'sethlowie/vim-test'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -104,8 +104,8 @@ let g:lightline = {
 " --color: Search color options
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color=always '.shellescape(<q-args>), 1, <bang>0)
 
-nnoremap <C-p> :FzfPreviewDirectory<Cr>
-nnoremap <silent> <leader>f :FzfPreviewProjectGrep <C-R><C-W><CR>
+nnoremap <C-p> :CocCommand fzf-preview.DirectoryFiles <Cr>
+nnoremap <silent> <leader>f :CocCommand fzf-preview.ProjectGrep <C-R><C-W><CR>
 
 " #### EDITOR SETTINGS ####
 :set syntax=on

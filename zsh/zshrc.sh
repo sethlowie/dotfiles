@@ -56,3 +56,5 @@ git config --global core.editor "nvim"
 export CBROOT=/Applications/Couchbase\ Server.app/Contents/Resources/couchbase-core/bin
 
 export PATH=$PATH:$CBROOT:$CBROOT/tools:$CBROOT/intall
+
+alias clear-swap="rm ~/.local/share/nvim/swap/* -y"
