@@ -112,7 +112,7 @@ nnoremap <silent> <leader>f :CocCommand fzf-preview.ProjectGrep <C-R><C-W><CR>
 :set mouse=a
 
 " coc extensions
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-fzf-preview']
 
 " let g:airline_them = 'nord'
 nmap <leader>r :! sh run.sh<CR>
