@@ -58,3 +58,7 @@ export CBROOT=/Applications/Couchbase\ Server.app/Contents/Resources/couchbase-c
 export PATH=$PATH:$CBROOT:$CBROOT/tools:$CBROOT/intall
 
 alias clear-swap="rm ~/.local/share/nvim/swap/* -y"
+
+function gmb() {
+  git branch -r | xargs -L1 git --no-pager show -s --oneline --author="$(git config user.name)";
+}
