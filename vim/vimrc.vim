@@ -162,8 +162,6 @@ nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tg :TestVisit<CR>
 
-let test#custom_runners = {'Bash': ['ShUnit2']}
-
 " #### Highlight ####
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
@@ -275,6 +273,7 @@ endif
   nmap <silent> <Leader>gE <Plug>(coc-diagnostic-prev)
   nmap <silent> <Leader>v <Plug>(coc-fix-current)
   nmap <silent> <Leader>rr <Plug>(coc-rename)
+  nmap <silent> <Leader>cr :CocCommand rls.run<CR>
 " endfun
 
 " autocmd FileType typescript,javascript,elm :call GoYCM()

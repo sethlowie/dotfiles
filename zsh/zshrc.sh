@@ -62,3 +62,8 @@ alias clear-swap="rm ~/.local/share/nvim/swap/* -y"
 function gmb() {
   git branch -r | xargs -L1 git --no-pager show -s --oneline --author="$(git config user.name)";
 }
+
+# To make Facebook stop trying to be helpful
+# This disables create react apps annoying behavior of opening
+# a browser window whenever running `react-scripts` start
+export BROWSER=none
