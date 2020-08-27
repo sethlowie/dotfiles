@@ -2,6 +2,8 @@ TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
 }
 
+source ~/dotfiles/zsh/gpg.zsh
+
 source ~/dotfiles/zsh/zshrc.sh
 # if command -v tmux>/dev/null; then
 #	[ -z $TMUX ] && exec tmux new -s getit
