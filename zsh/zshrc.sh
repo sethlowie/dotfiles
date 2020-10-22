@@ -1,10 +1,8 @@
-zplug "dracula/zsh", as:theme
-
 export TERM="screen-256color"
 export BAT_THEME="Dracula"
 
 # ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_THEME="dracula"
+# ZSH_THEME="dracula"
 
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
