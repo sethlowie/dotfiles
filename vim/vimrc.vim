@@ -75,6 +75,7 @@ endif
 set background=dark
 " colorscheme vim-material
 colorscheme dracula
+let g:dracula_colorterm = 0
 let g:lightline = {
       \ 'colorscheme': 'dracula',
       \ 'active': {
