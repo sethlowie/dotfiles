@@ -12,7 +12,7 @@ font="Iosevka"
 # font="FiraCode"
 # font="FiraCode"
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/$font.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/$font.zip
 
 mkdir -p $HOME/.local/share/fonts/NerdFonts
 

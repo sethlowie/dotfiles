@@ -16,6 +16,9 @@ source ~/dotfiles/zsh/zshrc.sh
 # (cd ~/dotfiles && git pull && git submodule update --init --recursive)
 source ~/dotfiles/zsh/keybindings.sh
 
+source ~/dotfiles/zsh/git.sh
+source ~/dotfiles/zsh/common.sh
+
 # alacrittyUpdate() {
 	# cp ~/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml;
 	# exit;
