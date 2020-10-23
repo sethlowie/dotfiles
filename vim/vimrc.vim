@@ -8,6 +8,7 @@ Plug 'tpope/vim-surround'
 
 " GIT
 Plug 'tpope/vim-fugitive'
+Plug 'stsewd/fzf-checkout.vim'
 
 " GAMES
 " Plug 'ThePrimeagen/vim-be-good'
@@ -266,6 +267,9 @@ endif
 
   inoremap <silent><expr> <Leader>c coc#refresh()
 
+  let $FZF_DEFAULT_OPTS='--reverse'
+
+  nmap <silent> <Leader>gb GCheckout<CR>
   nmap <silent> <Leader>gd <Plug>(coc-definition)
   nmap <silent> <Leader>gy <Plug>(coc-type-definition)
   nmap <silent> <Leader>gi <Plug>(coc-implementation)
