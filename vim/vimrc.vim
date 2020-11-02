@@ -5,6 +5,11 @@ Plug 'tpope/vim-rhubarb'
 Plug 'yuki-ycino/fzf-preview.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'leafgarland/typescript-vim'
+Plug 'sheerun/vim-polyglot'
+
 
 " GIT
 Plug 'tpope/vim-fugitive'
@@ -18,6 +23,8 @@ Plug 'hzchirs/vim-material'
 Plug 'joshdick/onedark.vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'embark-theme/vim', { 'as': 'embark' }
+Plug 'romgrk/doom-one.vim'
 
 " Elm
 Plug 'mattn/emmet-vim'
@@ -42,9 +49,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
-" Plug 'peitalin/vim-jsx-typescript'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'branch': 'release/1.x' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -74,11 +80,12 @@ if (has('termguicolors'))
 endif
 " let g:material_style='oceanic'
 set background=dark
+" colorscheme doom
 " colorscheme vim-material
-colorscheme dracula
+colorscheme embark
 let g:dracula_colorterm = 0
 let g:lightline = {
-      \ 'colorscheme': 'dracula',
+      \ 'colorscheme': 'embark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paster' ],
       \             [ 'readonly', 'filename', 'modified' ] ],
@@ -269,7 +276,7 @@ endif
 
   let $FZF_DEFAULT_OPTS='--reverse'
 
-  nmap <silent> <Leader>gb GCheckout<CR>
+  nmap <silent> <Leader>gb :GBranches<CR>
   nmap <silent> <Leader>gd <Plug>(coc-definition)
   nmap <silent> <Leader>gy <Plug>(coc-type-definition)
   nmap <silent> <Leader>gi <Plug>(coc-implementation)

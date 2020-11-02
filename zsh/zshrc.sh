@@ -32,11 +32,12 @@ alias run-elm="elm-live src/Main.elm --open -- --output=elm.js --debug"
 # )
 
 # GO STUFF
-# export GOROOT=/usr/local/bin
+export GOROOT=$HOME/.go/go
 # export GOROOT="$(brew --prefix golang)/libexec"
 export GOPATH=$HOME/go
 # export GOROOT=$GOPATH
 export PATH=$GOPATH/bin:$PATH
+export PATH=$PATH:$GOROOT:$GOROOT/bin
 
 # Fix Go because it's terrible
 export GO111MODULE=on
