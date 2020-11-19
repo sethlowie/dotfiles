@@ -82,10 +82,10 @@ endif
 set background=dark
 " colorscheme doom
 " colorscheme vim-material
-colorscheme embark
+colorscheme onedark
 let g:dracula_colorterm = 0
 let g:lightline = {
-      \ 'colorscheme': 'embark',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paster' ],
       \             [ 'readonly', 'filename', 'modified' ] ],

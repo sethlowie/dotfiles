@@ -1,0 +1,16 @@
+{
+  "typescript.suggestionActions.enabled": false,
+  "tsserver.maxTsServerMemory": 100000,
+  "tsserver.disableAutomaticTypeAcquisition": false,
+  "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "elmAnalyseTrigger": "never"
+      }
+    }
+  },
+  "codeLens.enable": true
+}
