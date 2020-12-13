@@ -1,3 +1,6 @@
+source ~/dotfiles/zsh/common.sh
+source ~/dotfiles/zsh/git.sh
+
 export TERM="screen-256color"
 export BAT_THEME="Dracula"
 
@@ -66,3 +69,5 @@ function gmb() {
 # This disables create react apps annoying behavior of opening
 # a browser window whenever running `react-scripts` start
 export BROWSER=none
+
+eval "$(starship init zsh)"

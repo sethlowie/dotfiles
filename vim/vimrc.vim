@@ -9,7 +9,8 @@ Plug 'tpope/vim-surround'
 " Plug 'pangloss/vim-javascript'
 " Plug 'leafgarland/typescript-vim'
 Plug 'sheerun/vim-polyglot'
-
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+Plug 'wakatime/vim-wakatime'
 
 " GIT
 Plug 'tpope/vim-fugitive'
@@ -297,3 +298,8 @@ endif
 :nmap <Leader>E :CocCommand explorer --quit-on-open --reveal<CR>
 
 :nmap <silent> <Leader>af :CocCommand eslint.executeAutofix<CR>
+
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+:set updatetime=100
