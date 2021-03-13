@@ -20,6 +20,7 @@ source ~/dotfiles/zsh/keybindings.sh
 source ~/dotfiles/zsh/git.sh
 source ~/dotfiles/zsh/common.sh
 source ~/dotfiles/zsh/custom.sh
+source ~/workfiles/work.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -194,7 +194,8 @@ let g:user_emmet_leader_key=','
 " GIT SETTINGS
 :set diffopt+=vertical
 nnoremap <silent> <Leader>gs :vertical Gstatus<CR>
-nnoremap <silent> <Leader>gc :Gcommit -v<CR>
+nnoremap <silent> <Leader>gc :Git commit -v<CR>
+nnoremap <silent> <Leader>gp :Git push -v<CR>
 nnoremap <silent> <Leader>ss :vsp<CR>
 nnoremap <silent> <Leader>si :sp<CR>
 nnoremap <silent> <Leader>gg :45wincmd_<CR>
@@ -303,3 +304,10 @@ xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 :set updatetime=100
+
+let g:fzf_branch_actions = {
+      \ 'track': {'keymap': 'enter'},
+      \}
+
+" GO STUFF
+nmap <silent> <Leader>gv :GoVet<CR>

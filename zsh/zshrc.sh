@@ -1,6 +1,3 @@
-source ~/dotfiles/zsh/common.sh
-source ~/dotfiles/zsh/git.sh
-
 export TERM="screen-256color"
 export BAT_THEME="Dracula"
 
