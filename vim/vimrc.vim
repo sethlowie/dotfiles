@@ -191,6 +191,9 @@ let g:typescript_indent_disable = 1
 " Allows Emmet Expansion with the Tab key
 let g:user_emmet_leader_key=','
 
+nnoremap <silent> <Leader>[ :cprev<CR>
+nnoremap <silent> <Leader>] :cnext<CR>
+
 " GIT SETTINGS
 :set diffopt+=vertical
 nnoremap <silent> <Leader>gs :vertical Gstatus<CR>
@@ -311,3 +314,4 @@ let g:fzf_branch_actions = {
 
 " GO STUFF
 nmap <silent> <Leader>gv :GoVet<CR>
+nmap <silent> <Leader>gb :GoRun<CR>
