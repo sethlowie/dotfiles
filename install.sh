@@ -83,7 +83,7 @@ install "Git" init
 cat ~/.ssh/my_key.pub|xclip -i -selection clipboard
 waitFor "Add Key to Github and Press Enter to Continue Installation\r\c"
 
-install Snap sudo apt-get install -y snapd
+# install Snap sudo apt-get install -y snapd
 
 install Dotfiles git clone --quiet git@github.com:logiXbomb/dotfiles.git ~/dotfiles
 
@@ -97,29 +97,29 @@ install Alacritty sh ~/dotfiles/scripts/alacritty.sh
 
 install "Nerd Fonts" sh ~/dotfiles/scripts/nerd-fonts.sh
 
-install ZSH sh ~/dotfiles/scripts/zsh.sh
+# install ZSH sh ~/dotfiles/scripts/zsh.sh
 
-install Docker sh ~/dotfiles/scripts/docker.sh
+# install Docker sh ~/dotfiles/scripts/docker.sh
 
-install "Docker Compose" sh ~/dotfiles/scripts/docker-compose.sh
+# install "Docker Compose" sh ~/dotfiles/scripts/docker-compose.sh
 
-install Rust sh ~/dotfiles/scripts/rust.sh
+# install Rust sh ~/dotfiles/scripts/rust.sh
 
 install Go sh ~/dotfiles/scripts/go.sh
 
 install Node sh ~/dotfiles/scripts/nodejs.sh
 
-install Elm sh ~/dotfiles/scripts/elm.sh
+# install Elm sh ~/dotfiles/scripts/elm.sh
 
-install Desktop sh ~/dotfiles/scripts/desktop.sh
+# install Desktop sh ~/dotfiles/scripts/desktop.sh
 
 # install "Linux Containers" sh ~/dotfiles/scripts/linuxcontainers.sh
 
-install Chrome sh ~/dotfiles/scripts/chrome.sh
+# install Chrome sh ~/dotfiles/scripts/chrome.sh
 
-install Slack sh ~/dotfiles/scripts/slack.sh
+# install Slack sh ~/dotfiles/scripts/slack.sh
 
-install Zoom sh ~/dotfiles/scripts/zoom.sh
+# install Zoom sh ~/dotfiles/scripts/zoom.sh
 
 chsh -s $(which zsh)
 
