@@ -3,7 +3,7 @@
 sudo apt-get update
 sudo apt-get -y upgrade
 
-GO_VERSION=1.15
+GO_VERSION=1.16
 
 cd /tmp
 wget "https://dl.google.com/go/go$GO_VERSION.linux-amd64.tar.gz"
