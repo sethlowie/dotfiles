@@ -1,8 +1,9 @@
 #! /bin/bash
 
-sudo apt-get install nodejs npm -y
+NODE_VERSION=14.x
 
-mkdir ~/.npm-global
+cd ~
+curl -sL "https://deb.nodesource.com/setup_$NODE_VERSION" -o nodesource_setup.sh
 
-npm config set prefix '~/.npm-global'
-
+sudo bash nodesource_setup.sh
+sudo apt install nodejs
