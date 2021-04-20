@@ -14,3 +14,8 @@
 
 sudo apt-get install -y alacritty
 
+cd ~/.config
+mkdir alacritty
+cd ./alacritty
+
+ln ~/dotfiles/alacritty/alacritty.yml alacritty.yml
