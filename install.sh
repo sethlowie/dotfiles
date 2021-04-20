@@ -121,10 +121,10 @@ install Node sh ~/dotfiles/scripts/nodejs.sh
 
 # install Zoom sh ~/dotfiles/scripts/zoom.sh
 
-chsh -s $(which zsh)
+# chsh -s $(which zsh)
 
 nvim +'PlugInstall --sync' +qa
 nvim +'UpdateRemotePlugins' +qa
 
-sudo shutdown -r now
+# sudo shutdown -r now
 
