@@ -1,5 +1,5 @@
 export TERM="screen-256color"
-export BAT_THEME="Dracula"
+export BAT_THEME="OneHalfDark"
 
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME="dracula"
@@ -32,7 +32,7 @@ alias run-elm="elm-live src/Main.elm --open -- --output=elm.js --debug"
 # )
 
 # GO STUFF
-export GOROOT=$HOME/.go/go
+export GOROOT=/usr/local/go
 # export GOROOT="$(brew --prefix golang)/libexec"
 export GOPATH=$HOME/go
 # export GOROOT=$GOPATH
@@ -67,4 +67,15 @@ function gmb() {
 # a browser window whenever running `react-scripts` start
 export BROWSER=none
 
-eval "$(starship init zsh)"
+alias	lw="ls -lah \
+	-I branches \
+	-I config \
+	-I description \
+	-I HEAD \
+	-I hooks \
+	-I info \
+	-I logs \
+	-I objects \
+	-I packed-refs \
+	-I refs \
+	-I worktrees"
