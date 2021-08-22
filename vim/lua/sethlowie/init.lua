@@ -1,5 +1,8 @@
 require("sethlowie/plugged")
 require("sethlowie/typescript")
+require("sethlowie/elm")
+require("sethlowie/go")
+require("sethlowie/tailwind")
 
 local nvim_set_keymap = vim.api.nvim_set_keymap
 local nvim_set_option = vim.api.nvim_set_option

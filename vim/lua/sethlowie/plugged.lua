@@ -1,5 +1,4 @@
 local cmd = vim.cmd
-local use_coc = os.getenv("USE_COC")
 -- ================== VIM PLUGGED ================== --
 cmd("call plug#begin('~/.vim/plugged')")
 cmd("Plug 'rust-lang/rust.vim'")
@@ -18,6 +17,7 @@ cmd("Plug 'wakatime/vim-wakatime'")
 -- GIT
 cmd("Plug 'tpope/vim-fugitive'")
 cmd("Plug 'stsewd/fzf-checkout.vim'")
+cmd("Plug 'mtdl9/vim-log-highlighting'");
 
 -- THEMES
 cmd("Plug 'joshdick/onedark.vim'")
@@ -37,11 +37,9 @@ cmd("Plug 'hrsh7th/vim-vsnip'")
 cmd("Plug 'glepnir/lspsaga.nvim'")
 cmd("Plug 'kosayoda/nvim-lightbulb'")
 cmd("Plug 'onsails/lspkind-nvim'")
+-- cmd("Plug 'kabouzeid/nvim-lspinstall'")
 -- Plug 'nvim-lua/completion-nvim'
-
-if use_coc then
-    cmd("Plug 'neoclide/coc.nvim', {'branch': 'release'}")
-end
+-- cmd("Plug 'neoclide/coc.nvim', {'branch': 'release'}")
 cmd("Plug 'jiangmiao/auto-pairs'")
 cmd("Plug 'mhinz/vim-startify'")
 
@@ -65,3 +63,4 @@ cmd("Plug 'sethlowie/vim-notes'")
 cmd("call plug#end()")
 
 
+cmd("autocmd User Fugitive command! -buffer -bar Gmylog exe 'terminal' FugitivePrepare(['log', '--oneline', '--decorate', '--graph', '--all'])")

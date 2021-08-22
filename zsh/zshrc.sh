@@ -79,3 +79,20 @@ alias	lw="ls -lah \
 	-I packed-refs \
 	-I refs \
 	-I worktrees"
+
+function glc() {
+	git log --oneline | vim +/\v^$1|^$2
+}
+
+function cbenv() {
+	devID=$(curl -s https://dev.nonprod-project-avengers.com | sed -n 's|.*RELEASE:"\([^"]*\)".*|\1|p');
+	stageID=$(curl -s https://stage.nonprod-project-avengers.com | sed -n 's|.*RELEASE:"\([^"]*\)".*|\1|p');
+	prodID=$(curl -s https://cloud.couchbase.com | sed -n 's|.*RELEASE:"\([^"]*\)".*|\1|p');
+	gitName=$(git config --global user.name);
+	echo "SETTING CUTLING FOR $devID"
+	git log --pretty=format:'%s [%an] <%h>' |\
+		awk -v d="<$devID" '$0 ~ d && !x {print "\nDEV CUTLINE --------------------------------------------------- \n"; x=1} 1' |\
+		awk -v s="<$stageID" '$0 ~ s && !x {print "\nSTAGE CUTLINE --------------------------------------------------- \n"; x=1} 1' |\
+		awk -v p="<$prodID" '$0 ~ p && !x {print "\nPROD CUTLINE --------------------------------------------------- \n"; x=1} 1' |\
+		vim -c 'set filetype=log' +/$gitName
+}

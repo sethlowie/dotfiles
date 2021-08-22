@@ -2,6 +2,10 @@ local g = vim.g
 local cmd = vim.cmd
 local nvim_set_keymap = vim.api.nvim_set_keymap
 
+print("waffles are great")
+
+require'lspconfig'.gopls.setup{}
+
 cmd('let test#go#runner = "richgo"')
 
 g.go_disable_autoinstall = 0
