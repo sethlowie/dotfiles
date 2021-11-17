@@ -3,6 +3,8 @@ require("sethlowie/typescript")
 require("sethlowie/elm")
 require("sethlowie/go")
 require("sethlowie/tailwind")
+require("sethlowie/rust")
+require("sethlowie/deno")
 
 local nvim_set_keymap = vim.api.nvim_set_keymap
 local nvim_set_option = vim.api.nvim_set_option
@@ -68,7 +70,7 @@ vim.g.go_fmt_command = 'goimports'
 
 -- GIT STUFF
 -- vim.api.nvim_set_option('diffopt', 'vertical')
-nvim_set_keymap('n', '<Leader>gs', ':vertical Gstatus<CR>', { noremap = true, silent = true })
+nvim_set_keymap('n', '<Leader>gs', ':vertical Git<CR>', { noremap = true, silent = true })
 nvim_set_keymap('n', '<Leader>gc', ':Git commit -v<CR>', { noremap = true, silent = true })
 nvim_set_keymap('n', '<Leader>gp', ':Git push -v<CR>', { noremap = true, silent = true })
 nvim_set_keymap('n', '<Leader>gg', ':45wincmd_<CR>', { noremap = true, silent = true })

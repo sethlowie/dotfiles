@@ -96,3 +96,12 @@ function cbenv() {
 		awk -v p="<$prodID" '$0 ~ p && !x {print "\nPROD CUTLINE --------------------------------------------------- \n"; x=1} 1' |\
 		vim -c 'set filetype=log' +/$gitName
 }
+
+functino cbserver() {
+	cd ~/go/src/github.com/sethlowie/lunar-eclipse/dev-tools;
+	docker build -t cb .;
+	docker run -p 8091:8091 cb;
+}
+
+export DENO_INSTALL="/home/slowie/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"

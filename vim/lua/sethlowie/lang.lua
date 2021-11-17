@@ -31,11 +31,11 @@ lspconfig.tsserver.setup {
     ["textDocument/publishDiagnostics"] = is_using_eslint,
   },
   -- on_init = custom_on_init,
-  root_dir = vim.loop.cwd,
+  root_dir = util.root_pattern("package.json")
 }
 
 lspconfig.efm.setup {
-  root_dir = util.root_pattern(".git", vim.fn.getcwd()),
+  root_dir = util.root_pattern("package.json"),
   on_attach = function(client)
     client.resolved_capabilities.rename = false
     client.resolved_capabilities.hover = false
