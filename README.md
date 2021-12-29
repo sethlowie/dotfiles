@@ -29,3 +29,4 @@ Like "cat" but with syntax highlighting. Mostly used in vim for previewing files
 
 Replacement for "find"
 
+> Note: on linux the command will be `fdfind` instead of `fd` as fd is already used by another package. Fill free to `alias fd="fdfind"`
