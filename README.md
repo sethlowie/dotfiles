@@ -10,7 +10,7 @@ bash <(curl -s https://raw.githubusercontent.com/logiXbomb/dotfiles/master/insta
 
 # Things to install
 
-## https://github.com/ogham/exa
-> exa -l -a --icons -F -a --octal-permissions -h
+#### https://github.com/ogham/exa
+> alias ls='exa -l -a --icons -F -a --octal-permissions -h'
 
-## https://github.com/BurntSushi/ripgrep
+#### https://github.com/BurntSushi/ripgrep
