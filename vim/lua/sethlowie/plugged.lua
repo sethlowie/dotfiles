@@ -22,6 +22,9 @@ cmd("Plug 'mtdl9/vim-log-highlighting'");
 -- THEMES
 cmd("Plug 'joshdick/onedark.vim'")
 
+-- BLOCKCHAIN
+cmd("Plug 'tomlion/vim-solidity'")
+
 -- Elm
 cmd("Plug 'mattn/emmet-vim'")
 cmd("Plug 'elmcast/elm-vim'")

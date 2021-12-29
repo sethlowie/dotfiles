@@ -7,3 +7,10 @@ bash -c "$(wget https://raw.githubusercontent.com/logiXbomb/dotfiles/master/inst
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/logiXbomb/dotfiles/master/install_mac.sh)
 ```
+
+# Things to install
+
+## https://github.com/ogham/exa
+> exa -l -a --icons -F -a --octal-permissions -h
+
+## https://github.com/BurntSushi/ripgrep

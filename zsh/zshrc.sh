@@ -105,3 +105,5 @@ functino cbserver() {
 
 export DENO_INSTALL="/home/slowie/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+alias ls="exa -l -a --icons -F -a --octal-permissions -h"

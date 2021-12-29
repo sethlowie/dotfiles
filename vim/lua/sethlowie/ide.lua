@@ -16,6 +16,9 @@ nvim_set_keymap('n', '<Leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { no
 nvim_set_keymap('n', '<Leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
 nvim_set_keymap('n', '<Leader>rr', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
 
+-- CHECK COVERAGE
+nvim_set_keymap('n', '<Leader>ff', '<cmd>! npm run check-coverage<CR>', { noremap = true })
+
 -- PREV/NEXT
 nvim_set_keymap('n', '<Leader>nn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 nvim_set_keymap('n', '<Leader>NN', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
