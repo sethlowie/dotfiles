@@ -5,6 +5,7 @@ require("sethlowie/go")
 require("sethlowie/tailwind")
 require("sethlowie/rust")
 require("sethlowie/deno")
+require("sethlowie/resscript")
 
 local nvim_set_keymap = vim.api.nvim_set_keymap
 local nvim_set_option = vim.api.nvim_set_option

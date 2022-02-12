@@ -30,6 +30,9 @@ cmd("Plug 'mattn/emmet-vim'")
 cmd("Plug 'elmcast/elm-vim'")
 cmd("Plug 'andys8/vim-elm-syntax'")
 
+-- RESCRIPT
+cmd("Plug 'rescript-lang/vim-rescript'")
+
 -- React
 cmd("Plug 'ianks/vim-tsx'")
 
@@ -37,7 +40,8 @@ cmd("Plug 'ianks/vim-tsx'")
 cmd("Plug 'neovim/nvim-lspconfig'")
 cmd("Plug 'hrsh7th/nvim-compe'")
 cmd("Plug 'hrsh7th/vim-vsnip'")
-cmd("Plug 'glepnir/lspsaga.nvim'")
+-- cmd("Plug 'glepnir/lspsaga.nvim'")
+cmd("Plug 'tami5/lspsaga.nvim'") -- temporary fork for 0.5.1+ support
 cmd("Plug 'kosayoda/nvim-lightbulb'")
 cmd("Plug 'onsails/lspkind-nvim'")
 -- cmd("Plug 'kabouzeid/nvim-lspinstall'")

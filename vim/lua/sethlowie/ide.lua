@@ -20,8 +20,8 @@ nvim_set_keymap('n', '<Leader>rr', '<cmd>lua vim.lsp.buf.rename()<CR>', { norema
 nvim_set_keymap('n', '<Leader>ff', '<cmd>! npm run check-coverage<CR>', { noremap = true })
 
 -- PREV/NEXT
-nvim_set_keymap('n', '<Leader>nn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
-nvim_set_keymap('n', '<Leader>NN', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
+-- nvim_set_keymap('n', '<Leader>nn', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
+-- nvim_set_keymap('n', '<Leader>NN', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
 
 nvim_set_keymap('n', '<Leader>af', '<cmd>lua vim.lsp.buf.formatting_sync()<CR>', { noremap = true, silent = true })
 nvim_set_keymap('n', '<Leader>gt', ':Lspsaga hover_doc<CR>', { noremap = true, silent = true })

@@ -34,3 +34,10 @@ Replacement for "find"
 #### https://github.com/XAMPPRocky/tokei
 
 For counting LOC in a project. This a a rust solution, another great alternative written in Go is [scc](https://github.com/boyter/scc)
+
+
+## Experimental, things I've installed but may not be actively using yet
+
+#### https://github.com/dalance/procs
+
+Replacement for the `ps` command

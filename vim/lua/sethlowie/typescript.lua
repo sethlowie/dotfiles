@@ -2,8 +2,8 @@ local cmd = vim.cmd
 local nvim_set_keymap = vim.api.nvim_set_keymap
 local g = vim.g
 
--- cmd('let g:prettier#autoformat = 0')
--- cmd('autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync')
+cmd('let g:prettier#autoformat = 0')
+cmd('autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync')
 
 g.typescript_indent_disable = 1
 g.user_emmet_leader_key = ','
