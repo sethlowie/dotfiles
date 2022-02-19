@@ -33,6 +33,9 @@ cmd("Plug 'andys8/vim-elm-syntax'")
 -- RESCRIPT
 cmd("Plug 'rescript-lang/vim-rescript'")
 
+-- SVELTE
+cmd("Plug 'evanleck/vim-svelte', {'branch': 'main'}")
+
 -- React
 cmd("Plug 'ianks/vim-tsx'")
 
