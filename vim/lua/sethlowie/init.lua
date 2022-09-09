@@ -1,3 +1,4 @@
+local cmd = vim.cmd
 require("sethlowie/plugged")
 require("sethlowie/typescript")
 require("sethlowie/elm")
@@ -82,3 +83,6 @@ vim.cmd('colorscheme onedark')
 require("sethlowie.telescope")
 require("sethlowie.lualine")
 require("sethlowie.ide")
+
+cmd("highlight Normal ctermbg=none guibg=none")
+cmd("highlight NonText ctermbg=none guibg=none")

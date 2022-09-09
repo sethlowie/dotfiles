@@ -34,33 +34,33 @@ lspconfig.tsserver.setup {
   root_dir = util.root_pattern("package.json")
 }
 
-lspconfig.efm.setup {
-  root_dir = util.root_pattern("package.json"),
-  on_attach = function(client)
-    client.resolved_capabilities.rename = false
-    client.resolved_capabilities.hover = false
-    client.resolved_capabilities.document_formatting = true
-    client.resolved_capabilities.completion = false
-  end,
-  init_options = {documentFormatting = true},
-  filetypes = {
-    "javascript",
-    "javascript.jsx",
-    "typescript",
-    "typescript.tsx",
-    "typescriptreact",
-    -- "svelte",
-  },
-  settings = {
-    languages = {
-      javascript = { eslint },
-      typescript = { eslint },
-      ["typescript.tsx"] = { eslint },
-      typescriptreact = { eslint },
-      svelte = { eslint },
-    },
-  },
-}
+-- lspconfig.efm.setup {
+--   root_dir = util.root_pattern("package.json"),
+--   on_attach = function(client)
+--     client.resolved_capabilities.rename = false
+--     client.resolved_capabilities.hover = false
+--     client.resolved_capabilities.document_formatting = true
+--     client.resolved_capabilities.completion = false
+--   end,
+--   init_options = {documentFormatting = true},
+--   filetypes = {
+--     "javascript",
+--     "javascript.jsx",
+--     "typescript",
+--     "typescript.tsx",
+--     "typescriptreact",
+--     -- "svelte",
+--   },
+--   settings = {
+--     languages = {
+--       javascript = { eslint },
+--       typescript = { eslint },
+--       ["typescript.tsx"] = { eslint },
+--       typescriptreact = { eslint },
+--       svelte = { eslint },
+--     },
+--   },
+-- }
 
 local function eslint_config_exists()
   local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)

@@ -12,7 +12,7 @@ cmd("Plug 'nvim-telescope/telescope-fzy-native.nvim'")
 cmd("Plug 'christoomey/vim-tmux-navigator'")
 cmd("Plug 'tpope/vim-surround'")
 cmd("Plug 'sheerun/vim-polyglot'")
-cmd("Plug 'wakatime/vim-wakatime'")
+-- cmd("Plug 'wakatime/vim-wakatime'")
 
 -- GIT
 cmd("Plug 'tpope/vim-fugitive'")

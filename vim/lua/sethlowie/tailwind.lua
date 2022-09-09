@@ -1,7 +1,7 @@
 local util = require'lspconfig/util'
 
 require'lspconfig'.tailwindcss.setup{
-    cmd = { "tailwindcss-language-server", "--stdio" },
+    -- cmd = { "tailwindcss-language-server", "--stdio" },
     filetypes = { "aspnetcorerazor", "astro", "astro-markdown", "blade", "django-html", "edge", "eelixir", "ejs", "erb", "eruby", "gohtml", "haml", "handlebars", "hbs", "html", "html-eex", "heex", "jade", "leaf", "liquid", "markdown", "mdx", "mustache", "njk", "nunjucks", "php", "razor", "slim", "twig", "css", "less", "postcss", "sass", "scss", "stylus", "sugarss", "javascript", "javascriptreact", "reason", "rescript", "typescript", "typescriptreact", "vue", "svelte", "elm" },
     init_options = {
       userLanguages = {
@@ -22,7 +22,7 @@ require'lspconfig'.tailwindcss.setup{
             new_config.settings.editor.tabSize = vim.lsp.util.get_effective_tabstop()
           end
         end,
-    root_dir = util.root_pattern('tailwind.config.js', 'tailwind.config.ts', 'postcss.config.js', 'postcss.config.ts', 'package.json', 'node_modules', '.git'),
+    root_dir = util.root_pattern('tailwind.config.js',  'tailwind.config.cjs', 'tailwind.config.ts', 'postcss.config.js', 'postcss.config.ts', 'package.json', 'node_modules', '.git'),
     settings = {
       tailwindCSS = {
         classAttributes = { "class", "className", "classList", "ngClass" },
