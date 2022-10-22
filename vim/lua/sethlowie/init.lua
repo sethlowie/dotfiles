@@ -1,3 +1,6 @@
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 local cmd = vim.cmd
 require("sethlowie/plugged")
 require("sethlowie/typescript")
@@ -13,11 +16,13 @@ local nvim_set_keymap = vim.api.nvim_set_keymap
 local nvim_set_option = vim.api.nvim_set_option
 local opt = vim.opt
 
+require("nvim-tree").setup()
+
 vim.g.mapleader = ","
 vim.g.airline_powerline_fonts = 1
 opt.termguicolors = true
 
-nvim_set_keymap('n', '<Leader>o', ':NERDTreeFind<CR>', {})
+nvim_set_keymap('n', '<Leader>o', ':NvimTreeFindFile<CR>', {})
 
 -- GO STUFF
 
@@ -43,7 +48,7 @@ nvim_set_keymap('n', '<Leader>tg', ':TestVisit<CR>', { noremap = true, silent = 
 
 -- GENERAL OPTIONS
 nvim_set_option('updatetime', 100)
-nvim_set_keymap('', '<Leader><Tab>', ':NERDTreeToggle<CR>', {})
+nvim_set_keymap('', '<Leader><Tab>', ':NvimTreeToggle<CR>', {})
 nvim_set_keymap('n', '<Leader>sv', ':source $MYVIMRC', { noremap = true })
 nvim_set_option('mouse', 'a')
 nvim_set_option('syntax', 'on')
