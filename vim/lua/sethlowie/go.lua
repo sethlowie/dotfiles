@@ -15,4 +15,5 @@ g.go_highlight_operators = 1
 g.go_highlight_build_constraints = 1
 
 nvim_set_keymap('n', '<Leader>gv', ':GoVet<CR>', {})
+nvim_set_keymap('n', '<Leader>gi', ':GoImplements<CR>', {})
 
