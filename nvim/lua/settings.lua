@@ -3,6 +3,7 @@
 -------------------------------------------------------
 vim.g.mapleader = ","
 vim.opt.guicursor = ""
+vim.g.user_emmet_leader_key = ","
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
