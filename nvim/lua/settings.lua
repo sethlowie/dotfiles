@@ -34,4 +34,5 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
-
+vim.keymap.set("v", "<leader>y", '"+y', {})
+vim.keymap.set("n", "<leader>p", '"+p', {})
