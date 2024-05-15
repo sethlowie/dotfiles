@@ -1,8 +1,6 @@
-local newconfig = os.getenv("TRY_NEW_CONFIG")
+local useBackup = os.getenv("USE_BACKUP")
 
-if newconfig then
-	print("waffles are great")
-else
+if useBackup then
 	require("settings")
 
 	local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -19,4 +17,7 @@ else
 	vim.opt.rtp:prepend(lazypath)
 
 	require("lazy").setup("plugins")
+else
+	require("sethlowie.core")
+	require("sethlowie.lazy")
 end
