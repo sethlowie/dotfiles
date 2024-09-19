@@ -88,3 +88,5 @@ function list_workspaces() {
 }
 
 source ~/go/src/github.com/sethlowie/workfiles-teal/terminal/shortcuts.zsh
+
+alias ls='eza -l -a --icons -F -a --octal-permissions -h'
