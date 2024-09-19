@@ -4,6 +4,9 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+zinit snippet OMZP::git
+zinit snippet OMZP::kubectl
+
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/ohmyposh.toml)"
 fi
@@ -12,7 +15,20 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
-zinit snippet OMZP::git
+# Outputs the name of the current branch
+# Usage example: git pull origin $(git_current_branch)
+# Using '--quiet' with 'symbolic-ref' will not cause a fatal error (128) if
+# it's not a symbolic ref, but in a Git repo.
+function git_current_branch() {
+  local ref
+  ref=$(__git_prompt_git symbolic-ref --quiet HEAD 2> /dev/null)
+  local ret=$?
+  if [[ $ret != 0 ]]; then
+    [[ $ret == 128 ]] && return  # no git repo.
+    ref=$(__git_prompt_git rev-parse --short HEAD 2> /dev/null) || return
+  fi
+  echo ${ref#refs/heads/}
+}
 
 autoload -Uz compinit && compinit
 
