@@ -43,9 +43,11 @@ else
       highlight StatusLine ctermbg=none guibg=none
       highlight StatusLineNC ctermbg=none guibg=none
       highlight Pmenu ctermbg=none guibg=none
+      " highlight Pmenu guibg=#2E3440
       highlight PmenuSbar ctermbg=none guibg=none
       highlight PmenuThumb ctermbg=none guibg=none
-      highlight PmenuSel ctermbg=none guibg=none
+      " highlight PmenuSel ctermbg=none guibg=none
+      highlight PmenuSel guibg=#3B4252
       highlight WinSeparator ctermbg=none guibg=none
       highlight CursorColumn ctermbg=none guibg=none
       highlight ColorColumn ctermbg=none guibg=none

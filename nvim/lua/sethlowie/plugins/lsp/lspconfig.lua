@@ -85,6 +85,12 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["pyright"] = function()
+				-- configure pyright server
+				lspconfig["pyright"].setup({
+					capabilities = capabilities,
+				})
+			end,
 			-- ["svelte"] = function()
 			-- 	-- configure svelte server
 			-- 	lspconfig["svelte"].setup({

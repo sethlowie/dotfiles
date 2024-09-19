@@ -1,0 +1,12 @@
+add_newline = false
+
+[aws]
+disabled = true
+
+[kubernetes]
+disabled = false
+
+contexts = [
+    { context_pattern = ".*dev-teal.*", style = "bold cyan", symbol = "☸️", context_alias = "dev"},
+    { context_pattern = ".*prod-teal.*", style = "bold #ff0000", symbol = "☸️", context_alias = "prod (warning)"},
+]

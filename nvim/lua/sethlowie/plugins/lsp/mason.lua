@@ -25,7 +25,7 @@ return {
 		})
 
 		local servers = {
-			tsserver = {},
+			ts_ls = {},
 			html = {},
 			cssls = {},
 			svelte = {},
@@ -38,7 +38,7 @@ return {
 			stylua = {},
 			isort = {},
 			black = {},
-			pylint = {},
+			flake8 = {},
 			eslint_d = {},
 			tailwindcss = {
 				settings = {

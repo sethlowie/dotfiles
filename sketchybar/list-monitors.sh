@@ -1,19 +1,6 @@
-alias cf="cd ~/go/src/github.com/sethlowie/dotfiles && nvim"
-alias nlogs="cd ~/.local/state/nvim && nvim"
+#!/bin/bash
 
-alias pt="pnpm typecheck"
-alias ptt="pnpm test"
-alias pd="pnpm dev"
-
-function fd() {
-  cd $(find ~/go/src/github.com -maxdepth 2 -type d | fzf)
-}
-
-alias pip="pip3"
-alias python="python3"
-alias py="python3"
-
-function list_workspaces() {
+function list-monitors() {
   # Get the list of monitors
   monitors=($(aerospace list-monitors | awk '{print $1}'))
 
